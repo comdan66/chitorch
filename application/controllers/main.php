@@ -10,6 +10,7 @@ class Main extends Site_controller {
   }
 
   public function index () {
+    
     $this->load_view (null);
   }
 }
