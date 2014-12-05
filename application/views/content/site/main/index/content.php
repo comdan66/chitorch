@@ -35,19 +35,19 @@
       <div id="TOPI">
           <!-- LOGO START-->
           <div id="LOGOI">
-              <h1><a href="index.html">奇拓室內裝修設計 CHI-TORCH</a></h1>
+              <h1><a href="/">奇拓室內裝修設計 CHI-TORCH</a></h1>
             </div>
             <!-- LOGO END-->
             
             <!-- 主選單區 START -->
             <div id="MENUI">
                   <ul>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="project.html">Project</a></li>
-                      <li><a href="media.html">Media</a></li>
-                      <li><a href="news.html">News</a></li>
-                      <li><a href="service.html">Service</a></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="about">About</a></li>
+                      <li><a href="project">Project</a></li>
+                      <li><a href="media">Media</a></li>
+                      <li><a href="news">News</a></li>
+                      <li><a href="service">Service</a></li>
+                      <li><a href="contact">Contact</a></li>
                   </ul>   
             </div>
             <!-- 主選單區 END -->
