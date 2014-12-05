@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+<script type="text/javascript">
+// 说明：用 Javascript 制作可折叠式导航菜单
+// 整理：http://www.CodeBit.cn
+ 
+// curr_id : 当前id ; total_num 总共有几个菜单
+function switchMenu(curr_id, total_num)
+{
+    for(var i=0; i<total_num; i++)
+    {
+        //二级菜单
+        var el = document.getElementById('menu_sub_'+i);
+ 
+        if(!el) return;
+ 
+        //一级菜单前面的图片
+        var img = document.getElementById('menu_master_'+i);
+ 
+        if(i == curr_id)
+        {
+            el.style.display = "block";
+           <!-- img.src = "img/open.gif"; -->
+        }
+        else
+        {
+            el.style.display = "none";
+            <!-- img.src = "img/close.gif"; -->
+        }
+    }
+}
+</script>
+<style type="text/css">
+<!--
+#warp {
+    width:200px;
+    margin:100px auto;
+}
+.menu_master {
+    border:1px solid #ccc;
+    padding:5px 10px;
+    margin-bottom:2px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#666;
+}
+.menu_master img { vertical-align:middle; }
+.sub_menu { display:none; }
+.sub_menu ul, .sub_menu ul li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.sub_menu ul li a {
+    margin:0 0 3px 10px;
+    padding:3px 0 2px 25px;
+    /*background:url('img/fw.gif') no-repeat 5px center;*/
+    display:block;
+    height:18px;
+    border-bottom:1px solid #eee;
+    color:#666;
+    text-decoration:none;
+}
+-->
+</style>
+ 
+ 
+
+<body>
+
+<div id="warp">
+ 
+    <div class="menu_master" onclick="javascript:switchMenu(0, 1);">
+         <a href="#" title="PHP/MySQL教程">PHP/MySQL</a>
+    </div>
+    <div id="menu_sub_0" class="sub_menu">
+       <!-- <ul>
+            <li><a href="#" title="PHP/MySQL教程">PHP/MySQL教程</a></li>
+            <li><a href="#" title="PHP/MySQL小技巧">PHP/MySQL小技巧</a></li>
+            <li><a href="#" title="PHP/MySQL常见问题">PHP/MySQL常见问题</a></li>
+        </ul>-->
+    </div>
+ 
+    <div class="menu_master" onclick="javascript:switchMenu(1, 4);">
+        <a href="#" title="PHP/MySQL教程">(X)HTML/CSS</a>
+    </div>
+    <div id="menu_sub_1" class="sub_menu">
+        <ul>
+            <li><a href="#">(X)HTML/CSS教程</a></li>
+            <li><a href="#">(X)HTML/CSS小技巧</a></li>
+        </ul>
+    </div>
+ 
+    <div class="menu_master" onclick="javascript:switchMenu(2, 4);">
+        Ajax
+    </div>
+    <div id="menu_sub_2" class="sub_menu">
+        <ul>
+            <li><a href="#">Ajax教程</a></li>
+            <li><a href="#">Ajax小技巧</a></li>
+        </ul>
+    </div>
+ 
+    <div class="menu_master" onclick="javascript:switchMenu(3, 4);">
+        Javascript
+    </div>
+    <div id="menu_sub_3" class="sub_menu">
+        <ul>
+            <li><a href="#">Javascript教程</a></li>
+            <li><a href="#">Javascript小技巧</a></li>
+        </ul>
+    </div>
+ 
+</div>
+</body>
+</html>
