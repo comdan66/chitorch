@@ -7,11 +7,10 @@
 class Admin_controller extends Oa_controller {
   public function __construct () {
     parent::__construct ();
+    $this->load->helper ('identity');
   
     $this->set_componemt_path ('component', 'admin')
          ->set_frame_path ('frame', 'admin')
-         ->set_content_path ('content', 'admin')
-         ->set_public_path ('public')
-         ->set_title ('');
+         ->set_content_path ('content', 'admin');
   }
 }

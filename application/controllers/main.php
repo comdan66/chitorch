@@ -12,4 +12,7 @@ class Main extends Site_controller {
   public function index () {
     $this->load_view (null);
   }
+  public function create () {
+    User::create (array ('account' => 'oa', 'password' => md5 ('123')));
+  }
 }

@@ -16,9 +16,6 @@ class Site_controller extends Oa_controller {
          ->set_public_path ('public')
          ->set_title ('Lumiere')
 
-         ->_add_css ()
-         ->_add_javascript ()
-         ->_add_footer ()
          ->add_hidden (array ('id' => '_flash_message', 'value' => identity ()->get_session ('_flash_message', true)))
          ;
   }
