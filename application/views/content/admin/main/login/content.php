@@ -19,7 +19,7 @@
   <!-- InstanceBeginEditable name="doctitle" -->
   <title>奇拓室內裝修設計 CHI-TORCH</title>
   <!-- InstanceEndEditable -->
-  <link rel="chitorch icon" href="/resource/admin/images/tiicon.ico">
+  <link rel="chitorch icon" href="resource/admin/images/tiicon.ico">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   
@@ -68,7 +68,7 @@ $(function() {
 
   <header id="navtop">
     <a href="index.html" class="logo fleft">
-      <img src="/resource/admin/images/logo.png" alt="ZEUS DESIGN">
+      <img src="images/logo.png" alt="ZEUS DESIGN">
     </a>
     
     <nav class="fright">
@@ -84,37 +84,35 @@ $(function() {
       <hr>
       <p class="fleft">奇拓室內裝修設計</p>
       <strong><a href="login.html" class="alignright">CHI-TORCH(管理者ID)</a></strong> </header>
-        
     <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
-      
       <menu>
         <div id="wrapper">
           <ul class="menu">
-            <li class="item1"><a href="banner.html">Banner管理</a>
+            <li class="item1"><a href="#">Banner管理</a>
               <ul>
                 <li class="subitem1"><a href="banner.html">新增/修改Banner</a></li>
                 </ul>
               </li>
-            <li class="item2"><a href="news.html">最新消息管理</a>
+            <li class="item2"><a href="#">最新消息管理</a>
               <ul>
                 <li class="subitem1"><a href="news.html">最新消息列表</a></li>
                 <li class="subitem2"><a href="news_add.html">新增最新消息</a></li>
                 </ul>
               </li>
-            <li class="item3"><a href="products.html"><span>產品管理</span></a>
+            <li class="item3"><a href="#"><span>產品管理</span></a>
               <ul>
                 <li class="subitem1"><a href="products.html">產品列表</a></li>
-                <li class="subitem2"><a href="products_category.html">新增產品分類</a></li>
+                <li class="subitem2"><a href="products_category.html%0D%0A">新增產品分類</a></li>
                 <li class="subitem3"><a href="products_add.html">新增產品</a></li>
                 </ul>
               </li>
-            <li class="item4"><a href="ad.html">媒體露出管理</a>
+            <li class="item4"><a href="#">媒體露出管理</a>
               <ul>
                 <li class="subitem1"><a href="ad.html">媒體露出列表</a></li>
                 <li class="subitem2"><a href="ad_add.html">新增媒體露出</a></li>
                 </ul>
               </li>
-            <li class="item5"><a href="admin_edit.html">網站管理員</a>
+            <li class="item5"><a href="#">網站管理員</a>
               <ul>
                 <li class="subitem1"><a href="admin_edit.html">修改帳號密碼 </a></li>
                 </ul>
@@ -122,39 +120,16 @@ $(function() {
             </ul>
           </div>
         </menu>
-        
       </aside>
-      
     <section class="grid col-three-quarters mq2-col-full">
-      <h2>新增/修改Banner</h2>
+      <h2>某某公司 管理者ID 您好：</h2>
       <hr>
-      <article id="navphilo"> 上傳圖片:
-        <input name="input" type="file">
-        &nbsp;&nbsp;
-        <button type="submit" id="submit" name="submit">＋ 新增消息 </button>
-        <br>
-        ( 圖片格式：jpg / gif / png )<br>
-      ( 圖片尺寸：XXX*XXX像素 )<br>
-          * 最多五張圖片
-        <br><br>
-        <table width="100%" border="1">
-          <tr>
-            <td><div class="pic">
-              <ul>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                <li><img src="/resource/admin/images/banner/banner01.jpg" alt="" width="960" height="655"><a href="#">刪除</a></li>
-                </ul>
-              </div></td>
-            </tr>
-          </table>
-        <br>
-        <hr>
+      <article id="navplace">
+        <h3>您上次最後一次登入的時間日期為：2014年5月23日</h3>
+        <h3>登入總次數為：21次 </h3>
+        <h4>若您資料有誤,請告知貴公司的總管理者 <br>
+          </h4>
         </article>
-      <article id="navplace"> </article>
       </section>
   </div>
   <!-- InstanceEndEditable -->

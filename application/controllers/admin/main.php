@@ -12,4 +12,10 @@ class Main extends Admin_controller {
   public function index () {
     $this->load_view ();
   }
+  public function login () {
+    $this->load_view ();
+  }
+  public function edit () {
+    $this->load_view ();
+  }
 }
