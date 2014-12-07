@@ -15,8 +15,19 @@
     <!--[if lt IE 9]>
         <link href="<?php echo base_url (array ('resource', 'site', 'css', 'main.css'));?>" rel="stylesheet" type="text/css">
     <![endif]-->
+    <style type="text/css">
+    .centbg {
+      margin:0;
+      padding:0;
+      max-width:100%;
+      height:100%;
+      background: #000 url(<?php echo ($banner = Banner::find ('one', array ('order' => 'id DESC', 'conditions' => array ()))) ? $banner->file_name->url () : '';?>) center center fixed no-repeat;
+      -moz-background-size: cover;
+      background-size: cover;
+    }
+    </style>
   </head>
-  <body class="centbg" style='background: #000 url(<?php echo Banner::find ('one', array ('order' => 'id DESC', 'conditions' => array ()))->file_name->url ();?>) center center fixed no-repeat;;'>
+  <body class="centbg">
 <?php echo isset ($hidden) ? $hidden:'';?>
 <?php echo isset ($content) ? $content : '';?>
   </body>
