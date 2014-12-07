@@ -18,16 +18,19 @@ class Main extends Admin_controller {
         $user->login_count += 1;
         $user->logined_at = date ('Y-m-d H:i:s');
         $user->save ();
-        identity ()->set_session ('user_id', $user->id) && redirect (array ('admin', 'login'));
-      }
-       else 
-        $message = '帳號密碼錯誤，請重新輸入!';
+        identity ()->set_session ('user_id', $user->id)->set_session ('_flash_message', '登入成功!', true) && redirect (array ('admin', 'login'));
+      } else $message = '帳號密碼錯誤，請重新輸入!';
 
-    $this->load_view (array ('message' => $message));
+    $this->set_frame_path ('frame', 'admin_login')
+         ->load_view (array ('message' => $message));
   }
 
   public function login () {
     $this->load_view ();
+  }
+  public function logout () {
+    identity ()->set_identity ('sign_out')->set_session ('_flash_message', '登出成功!', true);
+    redirect (array ('admin'));
   }
   public function edit () {
     $message = '';

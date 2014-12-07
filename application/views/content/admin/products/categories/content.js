@@ -1,1 +1,7 @@
-$(function() { });
+$(function() {
+  $('.del_cate').click (function () {
+    if ($(this).parents ('table').find ('tr').length <= 2)
+      $(this).parents ('table').append ($('<tr />').append ($('<td />').attr ('colspan', 3).text ('沒有任何產品分類')));
+    $(this).parents ('tr').remove ();
+  });
+});

@@ -39,6 +39,7 @@
 */
 $route['admin/edit'] = "admin/main/edit";
 $route['admin/login'] = "admin/main/login";
+$route['admin/logout'] = "admin/main/logout";
 
 $route['default_controller'] = "main";
 $route['admin'] = "admin/main";

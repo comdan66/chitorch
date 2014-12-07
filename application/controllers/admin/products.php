@@ -18,11 +18,15 @@ class Products extends Admin_controller {
       }, $product->blocks);
       $product->delete ();
     }, Product::find ('all', array ('conditions' => array ('id IN (?)', $ids))));
+    identity ()->set_session ('_flash_message', '刪除成功!', true);
+    redirect (array ('admin', $this->get_class (), 'index'), 'refresh');
+
   }
   public function index ($offset = 0) {
     $start       = trim ($this->input_post ('start'));
     $end         = trim ($this->input_post ('end'));
     $category_id = trim ($this->input_post ('category_id'));
+    
     if ($delete_ids = $this->input_post ('delete_ids'))
       $this->_delete ($delete_ids);
 
@@ -44,8 +48,8 @@ class Products extends Admin_controller {
   public function categories () {
 
     if ($this->has_post ()) {
-      if ($name = trim ($this->input_post ('name')))
-        Category::create (array ('name' => $name, 'sort' => Category::count () + 1));
+      if (($name = trim ($this->input_post ('name'))) && verifyCreateOrm (Category::create (array ('name' => $name, 'sort' => Category::count () + 1))))
+        identity ()->set_session ('_flash_message', '新增成功!', true) && redirect (array ('admin', $this->get_class (), $this->get_method ()), 'refresh');
 
       if ($categories = $this->input_post ('categories')) {
         if ($delete_ids = array_diff (field_array (Category::find ('all', array ('select' => 'id')), 'id'), array_map (function ($category) { return $category['id']; }, $categories))) {
@@ -56,6 +60,7 @@ class Products extends Admin_controller {
           if ($category['id'] && trim ($category['name']) && trim ($category['sort']))
             Category::table ()->update ($set = array ('name' => trim ($category['name']), 'sort' => trim ($category['sort'])), array ('id' => $category['id']));
         }, $categories);
+        identity ()->set_session ('_flash_message', '修改成功!', true) && redirect (array ('admin', $this->get_class (), $this->get_method ()), 'refresh');
       }
     }
 
@@ -115,7 +120,8 @@ class Products extends Admin_controller {
         $product->date = $date;
         $product->save ();
         
-        redirect (array ('admin', 'products', 'index'));
+        identity ()->set_session ('_flash_message', '修改成功!', true);
+        redirect (array ('admin', 'products'));
       } else {
         $this->load_view (array ('message' => '填寫的資料不完整！', 'product' => $product));
       }
@@ -157,7 +163,8 @@ class Products extends Admin_controller {
           $block = Block::create (array ('product_id' => $product->id, 'title' => $block_3['title']));
           foreach ($block_3['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
           
-          redirect (array ('admin', 'products', 'index'));
+          identity ()->set_session ('_flash_message', '新增成功!', true);
+          redirect (array ('admin', 'products'));
         } else {
           @$product->delete ();
         }

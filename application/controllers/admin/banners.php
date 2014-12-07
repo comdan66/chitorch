@@ -17,12 +17,11 @@ class Banners extends Admin_controller {
       $banner = Banner::find ('one', array ('conditions' => array ('id = ?', $id)));
       $banner->file_name->cleanAllFiles ();
       $banner->delete ();
-      
       return $this->output_json (array ('status' => true));
     } else {
-      if ($this->has_post ()) {
-        if (($file = $this->input_post ('file', true, true)) && verifyCreateOrm ($banner = Banner::create (array ('file_name' => ''))))
-          $banner->file_name->put ($file);
+      if ($this->has_post () && ($file = $this->input_post ('file', true, true)) && verifyCreateOrm ($banner = Banner::create (array ('file_name' => ''))) && $banner->file_name->put ($file)) {
+        identity ()->set_session ('_flash_message', '新增成功!', true);
+        redirect (array ('admin', $this->get_class (), $this->get_method ()), 'refresh');
       }
       $banners = Banner::find ('all', array ('order' => 'id DESC'));
       $this->load_view (array ('banners' => $banners));

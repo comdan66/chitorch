@@ -3,10 +3,15 @@
     <img src="/resource/admin/images/logo.png" alt="ZEUS DESIGN">
   </a>
   
-  <nav class="fright">
-    <ul>
-      <li><a href="index.html" class="navactive">登出</a></li>
-    </ul>
-    
-  </nav>
+<?php
+  if (identity ()->user ()) { ?>
+    <nav class="fright">
+      <ul>
+        <li>
+          <a href="<?php echo base_url (array ('admin', 'logout'));?>" class="navactive">登出</a>
+        </li>
+      </ul>
+    </nav>
+<?php
+  } ?>
 </header>
