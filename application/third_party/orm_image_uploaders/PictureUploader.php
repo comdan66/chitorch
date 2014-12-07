@@ -13,7 +13,10 @@ class PictureUploader extends OrmImageUploader {
   public function getVersions () {
     return array (
             '' => array (),
-            '80x80' => array ('resize', 80, 80, 'width'),
+            '64x64' => array ('adaptiveResizeQuadrant', 64, 64, 'c'),
+            '80x80' => array ('adaptiveResizeQuadrant', 80, 80, 'c'),
+            '191x168' => array ('adaptiveResizeQuadrant', 191, 168, 'c'),
+            '855x575' => array ('adaptiveResizeQuadrant', 855, 575, 'c'),
           );
   }
 }

@@ -1,0 +1,21 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+ 
+ @import "_oa";
+
+.products {
+  position: relative;
+  
+  @include opacity(1);
+  @include transition(all 0.2s ease-in-out);
+
+  &.cover {
+    @include opacity(.3);
+
+    &:hover {
+      @include opacity(1);
+    }
+  }
+}

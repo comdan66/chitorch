@@ -16,23 +16,8 @@
         <link href="<?php echo base_url (array ('resource', 'site', 'css', 'main.css'));?>" rel="stylesheet" type="text/css">
     <![endif]-->
   </head>
-  <body>
+  <body class="centbg">
 <?php echo isset ($hidden) ? $hidden:'';?>
-    <div id="ALLBCENT">
-      <!-- 左邊 START -->
-<?php echo render_cell ('site_cells', 'side_menu');?>
-      <!-- 左邊 END -->
-            
-      <!-- 右邊 START -->
 <?php echo isset ($content) ? $content : '';?>
-      <!-- 右邊 END -->
-        
-      <!-- 下方 START -->
-<?php echo render_cell ('site_cells', 'footer');?>
-      <!-- 下方 END -->
-    </div>
-
-<?php
-    echo isset ($javascript) ? $javascript:''; ?>
   </body>
 </html>

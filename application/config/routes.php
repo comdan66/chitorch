@@ -41,6 +41,8 @@ $route['admin/edit'] = "admin/main/edit";
 $route['admin/login'] = "admin/main/login";
 $route['admin/logout'] = "admin/main/logout";
 
+$route['products/(:num)'] = "products/content/$1";
+
 $route['default_controller'] = "main";
 $route['admin'] = "admin/main";
 $route['404_override'] = '';

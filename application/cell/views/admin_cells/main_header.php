@@ -1,8 +1,7 @@
 <header id="navtop">
-  <a href="index.html" class="logo fleft">
+  <a href="<?php echo base_url (array ());?>" class="logo fleft">
     <img src="/resource/admin/images/logo.png" alt="ZEUS DESIGN">
   </a>
-  
 <?php
   if (identity ()->user ()) { ?>
     <nav class="fright">

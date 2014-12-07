@@ -7,10 +7,10 @@
 class Banners extends Admin_controller {
   public function __construct () {
     parent::__construct ();
+    identity ()->user () || redirect (array ('admin'));
   }
 
   public function index () {
-    
     if ($this->is_ajax ()) {
       $id = $this->input_post ('id');
 

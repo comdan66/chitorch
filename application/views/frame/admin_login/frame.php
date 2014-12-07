@@ -9,9 +9,7 @@
     <?php echo isset ($meta) ? $meta:''; ?>
     <title><?php echo isset ($title) ? $title : ''; ?></title>
     
-    <link rel="chitorch icon" href="/resource/admin/images/tiicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="chitorch icon" href="<?php echo base_url (array ('resource', 'site', 'images', 'tiicon.ico'));?>">
     
     <?php echo isset ($css) ? $css:''; ?>
     <?php echo isset ($javascript) ? $javascript:''; ?>

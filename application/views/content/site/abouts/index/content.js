@@ -3,5 +3,6 @@
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
 
-$(function() {
+$(function () {
+
 });

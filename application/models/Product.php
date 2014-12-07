@@ -8,6 +8,9 @@ class Product extends OaModel {
 
   static $table_name = 'products';
 
+  static $has_one = array (
+    array ('first_picture', 'class_name' => 'Picture', 'order' => 'id ASC'),
+  );
   static $has_many = array (
     array ('pictures', 'class_name' => 'Picture'),
     array ('blocks', 'class_name' => 'Block'),

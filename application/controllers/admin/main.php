@@ -26,13 +26,19 @@ class Main extends Admin_controller {
   }
 
   public function login () {
+    identity ()->user () || redirect (array ('admin'));
+
     $this->load_view ();
   }
   public function logout () {
+    identity ()->user () || redirect (array ('admin'));
+
     identity ()->set_identity ('sign_out')->set_session ('_flash_message', '登出成功!', true);
     redirect (array ('admin'));
   }
   public function edit () {
+    identity ()->user () || redirect (array ('admin'));
+    
     $message = '';
     if ($this->has_post () && ($account = trim ($this->input_post ('account'))) && ($password = trim ($this->input_post ('password'))) && ($re_password = trim ($this->input_post ('re_password')))) {
       if ($password == $re_password) {

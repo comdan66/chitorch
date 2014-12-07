@@ -14,24 +14,36 @@ class Site_controller extends Oa_controller {
          ->set_frame_path ('frame', 'site')
          ->set_content_path ('content', 'site')
          ->set_public_path ('public')
+
+         ->add_meta (array ('name' => 'format-detection', 'content' => 'telephone=no'))
+         ->add_meta (array ('name' => 'format-detection', 'content' => 'address=no'))
+         ->add_meta (array ('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0, maximum-scale=1.0'))
+         ->add_meta (array ('name' => 'apple-mobile-web-app-capable', 'content' => 'yes'))
+         ->add_meta (array ('name' => 'apple-mobile-web-app-status-bar-style', 'content' => 'black'))
+         ->add_meta (array ('charset' => 'ISO-8859-1'))
+         ->add_meta (array ('name' => 'description', 'content' => '奇拓'))
+         ->add_meta (array ('name' => 'keywords', 'content' => '奇拓,chitorch,台北室內設計,室內裝潢,空間設計,住宅設計,居家裝潢,住家裝潢,設計整合,室內裝修,室內規劃,辦公室設計,裝修工程,商業空間設計'))
+
          ->set_title ('Lumiere')
 
          ->add_hidden (array ('id' => '_flash_message', 'value' => identity ()->get_session ('_flash_message', true)))
+         ->_add_css ()
+         ->_add_javascript ()
          ;
   }
 
   private function _add_css () {
-    return $this;
+    return $this
+            ->add_css (base_url (array ('resource', 'site', 'css', 'main.css')))
+            ->add_css (base_url (array ('resource', 'site', 'css', 'fontawesome.css')))
+            ;
   }
   private function _add_javascript () {
-    return $this->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS, 'jquery_v1.10.2', 'jquery-1.10.2.min.js')))
-
-                ->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS, 'imgLiquid_v0.9.944', 'imgLiquid-min.js')))
-                ->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS, 'jquery-timeago_v1.3.1', 'jquery.timeago.js')))
-                ->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS, 'jquery-timeago_v1.3.1', 'locales', 'jquery.timeago.zh-TW.js')))
-
-                ->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS . 'masonry_v3.1.2', 'masonry.pkgd.min.js')))
-                ->add_javascript (base_url (utilitySameLevelPath (REL_PATH_JS . 'imagesloaded_v3.1.8', 'imagesloaded.pkgd.min.js')))
+    return $this->add_javascript (base_url (array ('resource', 'jquery_v1.10.2', 'jquery-1.10.2.min.js')))
+                ->add_javascript (base_url (array ('resource', 'jquery-ui-1.10.3.custom', 'jquery-ui-1.10.3.custom.min.js')))
+                ->add_javascript (base_url (array ('resource', 'jquery.jgrowl_v1.3.0', 'jquery.jgrowl.js')))
+                ->add_javascript (base_url (array ('resource', 'site', 'js', 'slider.js')))
+                ->add_javascript (base_url (array ('resource', 'site', 'js', 'flycan.js')))
                 ;
   }
   private function _add_footer () {

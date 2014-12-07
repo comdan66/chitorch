@@ -7,6 +7,7 @@
 class Products extends Admin_controller {
   public function __construct () {
     parent::__construct ();
+    identity ()->user () || redirect (array ('admin'));
   }
 
   private function _delete ($ids) {
