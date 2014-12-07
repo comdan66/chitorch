@@ -7,7 +7,6 @@
 class Products extends Site_controller {
   public function __construct () {
     parent::__construct ();
-    $this->add_hidden (array ('id' => '_is_projects', 'value' => true));
   }
 
   public function content ($id = 0) {
@@ -60,6 +59,7 @@ class Products extends Site_controller {
     $this->pagination->initialize ($pagination_config);
     $pagination = $this->pagination->create_links ();
 
-    $this->load_view (array ('products' => $products, 'pagination' => $pagination));
+    $this->add_hidden (array ('id' => '_is_projects', 'value' => true))
+         ->load_view (array ('products' => $products, 'pagination' => $pagination));
   }
 }
