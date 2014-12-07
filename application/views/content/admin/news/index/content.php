@@ -27,28 +27,7 @@
   <link rel="stylesheet" href="/resource/admin/css/style.css">
    <!--左邊選單效果-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(function() {
- 
-    var menu_ul = $('.menu > li > ul'),
-        menu_a  = $('.menu > li > a');
-     
-    menu_ul.hide();
- 
-    menu_a.click(function(e) {
-        e.preventDefault();
-        if(!$(this).hasClass('active')) {
-            menu_a.removeClass('active');
-            menu_ul.filter(':visible').slideUp('normal');
-            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-        } else {
-            $(this).removeClass('active');
-            $(this).next().stop(true,true).slideUp('normal');
-        }
-    });
- 
-});
-</script>
+
 
   
   <!--[if lt IE 9]>
@@ -83,47 +62,10 @@ $(function() {
     <header class="grid col-full">
       <hr>
       <p class="fleft">奇拓室內裝修設計</p>
-      <strong><a href="login.html" class="alignright">CHI-TORCH(管理者ID)</a></strong> </header>
+      <strong><a href="login.html" class="alignright">CHI-TORCH(<?php echo identity ()->user ()->account;?>)</a></strong>
+    </header>
         
-    <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
-      
-      <menu>
-        <div id="wrapper">
-          <ul class="menu">
-            <li class="item1"><a href="banner.html">Banner管理</a>
-              <ul>
-                <li class="subitem1"><a href="banner.html">新增/修改Banner</a></li>
-                </ul>
-              </li>
-            <li class="item2"><a href="news.html">最新消息管理</a>
-              <ul>
-                <li class="subitem1"><a href="news.html">最新消息列表</a></li>
-                <li class="subitem2"><a href="news_add.html">新增最新消息</a></li>
-                </ul>
-              </li>
-            <li class="item3"><a href="products.html"><span>產品管理</span></a>
-              <ul>
-                <li class="subitem1"><a href="products.html">產品列表</a></li>
-                <li class="subitem2"><a href="products_category.html">新增產品分類</a></li>
-                <li class="subitem3"><a href="products_add.html">新增產品</a></li>
-                </ul>
-              </li>
-            <li class="item4"><a href="ad.html">媒體露出管理</a>
-              <ul>
-                <li class="subitem1"><a href="ad.html">媒體露出列表</a></li>
-                <li class="subitem2"><a href="ad_add.html">新增媒體露出</a></li>
-                </ul>
-              </li>
-            <li class="item5"><a href="admin_edit.html">網站管理員</a>
-              <ul>
-                <li class="subitem1"><a href="admin_edit.html">修改帳號密碼 </a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </menu>
-        
-      </aside>
+    <?php echo render_cell ('admin_cells', 'side_menu');?>
        
     <section class="grid col-three-quarters mq2-col-full">
       <h2>最新消息 > 列表</h2>

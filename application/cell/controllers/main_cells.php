@@ -9,7 +9,7 @@ class Main_cells extends Cell_Controller {
   public function _cache_index () {
     return array ('time' => 60 * 60, 'key' => null);
   }
-  public function index () {
+  public function main_header () {
     return $this->load_view ();
   }
 }

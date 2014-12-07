@@ -28,25 +28,6 @@
      <!--左邊選單效果-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-    <script type="text/javascript">
-      $(function() {
-        var $menu_ul = $('.menu > li > ul'),
-            $menu_a  = $('.menu > li > a');
-        $menu_ul.hide ();
-        $menu_a.click (function (e) {
-            e.preventDefault ();
-            if(!$(this).hasClass ('active')) {
-              $menu_a.removeClass ('active');
-              $menu_ul.filter (':visible').slideUp ('normal');
-              $(this).addClass ('active').next ().stop (true, true).slideDown ('normal');
-            } else {
-              $(this).removeClass ('active');
-              $(this).next ().stop (true, true).slideUp ('normal');
-            }
-        });
-      });
-    </script>
-
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -62,73 +43,18 @@
 
     <div class="container">
 
-      <header id="navtop">
-        <a href="index.html" class="logo fleft">
-          <img src="/resource/admin/images/logo.png" alt="ZEUS DESIGN">
-        </a>
-
-        <nav class="fright">
-          <ul>
-            <li><a href="index.html" class="navactive">登出</a></li>
-          </ul>
-        </nav>
-      </header>
+      <?php echo render_cell ('admin_cells', 'main_header');?>
       <!-- InstanceBeginEditable name="main" -->
 
       <div class="services-page main grid-wrap">
-        <header class="grid col-full">
-          <hr>
-          <p class="fleft">奇拓室內裝修設計</p>
-          <strong><a href="login.html" class="alignright">CHI-TORCH(管理者ID)</a></strong>
-        </header>
-
-        <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
-          <menu>
-            <div id="wrapper">
-              <ul class="menu">
-                <li class="item1"><a href="#">Banner管理</a>
-                  <ul>
-                    <li class="subitem1"><a href="banner.html">新增/修改Banner</a></li>
-                  </ul>
-                </li>
-
-                <li class="item2"><a href="#">最新消息管理</a>
-                  <ul>
-                    <li class="subitem1"><a href="news.html">最新消息列表</a></li>
-                    <li class="subitem2"><a href="news_add.html">新增最新消息</a></li>
-                  </ul>
-                </li>
-
-                <li class="item3"><a href="#"><span>產品管理</span></a>
-                  <ul>
-                    <li class="subitem1"><a href="products.html">產品列表</a></li>
-                    <li class="subitem2"><a href="products_category.html%0D%0A">新增產品分類</a></li>
-                    <li class="subitem3"><a href="products_add.html">新增產品</a></li>
-                  </ul>
-                </li>
-
-                <li class="item4"><a href="#">媒體露出管理</a>
-                  <ul>
-                    <li class="subitem1"><a href="ad.html">媒體露出列表</a></li>
-                    <li class="subitem2"><a href="ad_add.html">新增媒體露出</a></li>
-                  </ul>
-                </li>
-
-                <li class="item5"><a href="#">網站管理員</a>
-                  <ul>
-                    <li class="subitem1"><a href="admin_edit.html">修改帳號密碼 </a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </menu>
-        </aside>
+        <?php echo render_cell ('admin_cells', 'sub_header');?>
+        <?php echo render_cell ('admin_cells', 'side_menu');?>
 
         <section class="grid col-three-quarters mq2-col-full">
           <h2>某某公司 <?php echo identity ()->user ()->account;?> 您好：</h2>
           <hr>
           <article id="navplace">
-            <h3>您上次最後一次登入的時間日期為：<?php echo identity ()->user ()->logined_at->format('Y年m月d日');?></h3>
+            <h3>您上次最後一次登入的時間日期為：<?php echo identity ()->user ()->logined_at->format ('Y年m月d日');?></h3>
             <h3>登入總次數為：<?php echo identity ()->user ()->login_count;?>次 </h3>
             <h4>若您資料有誤,請告知貴公司的總管理者 <br>
             </h4>
@@ -137,13 +63,7 @@
       </div>
       <!-- InstanceEndEditable -->
       <!--main-->
-
-      <div class="divide-top">
-        <footer >
-          © copyright 2014 ZEUS Design CO., Ltd.
-        </footer>
-      </div>
-
+      <?php echo render_cell ('admin_cells', 'footer');?>
     </div>
   </body>
   <!-- InstanceEnd -->

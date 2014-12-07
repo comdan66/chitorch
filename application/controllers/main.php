@@ -13,6 +13,12 @@ class Main extends Site_controller {
     $this->load_view (null);
   }
   public function create () {
-    User::create (array ('account' => 'oa', 'password' => md5 ('123')));
+    // User::create (array ('account' => 'oa', 'password' => md5 ('123')));
+  }
+  public function demo () {
+    // Category::create (array ('name' => 'cate_1'));
+    // Category::create (array ('name' => 'cate_2'));
+    // Category::create (array ('name' => 'cate_3'));
+    // Category::create (array ('name' => 'cate_4'));
   }
 }
