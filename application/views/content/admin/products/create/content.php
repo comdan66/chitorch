@@ -106,7 +106,7 @@
                 <tr>
                   <td width="20%">日期</td>
                   <td width="80%" class="textleft">
-                    <input type='text' name='date' value="<?php echo date ('Y-m-d');?>" placeholder='請選擇日期' />
+                    <input type='text' name='date' value="<?php echo date ('Y-m-d');?>" placeholder='請選擇日期' pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" required title="請輸入正確的時間格式 (ex: 1999-01-01)" />
                     &nbsp;&nbsp;* 設定當天日期
                   </td>
                 </tr>
@@ -126,7 +126,7 @@
                 <tr>
                   <td>標題＊</td>
                   <td class="textleft">
-                    <input type='text' name='title' value="" placeholder='請輸入標題' maxlength='100' />
+                    <input type='text' name='title' value="" placeholder='請輸入標題' maxlength='100' pattern=".{1,100}" required title="輸入100個字元以內" />
                     &nbsp;&nbsp;輸入100個字元以內
                   </td>
                 </tr>
@@ -147,7 +147,7 @@
                 <tr>
                   <td bgcolor="#F7F7F7">標題一 ＊</td>
                   <td bgcolor="#F7F7F7" class="textleft">
-                    <input type='text' name='block_1[title]' value="" placeholder='請輸入標題一' maxlength='100' />
+                    <input type='text' name='block_1[title]' value="" placeholder='請輸入標題一' maxlength='100' pattern=".{1,100}" required title="輸入100個字元以內" />
                     <button type="button" class='add_spec' data-parent='block_1'>＋ 新增規格</button>
                   </td>
                 </tr>
@@ -157,7 +157,7 @@
                 <tr>
                   <td bgcolor="#F7F7F7">標題二 ＊</td>
                   <td bgcolor="#F7F7F7" class="textleft">
-                    <input type='text' value="" name='block_2[title]' placeholder='請輸入標題二' maxlength='255' >
+                    <input type='text' value="" name='block_2[title]' placeholder='請輸入標題二' maxlength='255' pattern=".{1,100}" required title="輸入100個字元以內" >
                     <button type="button" class='add_spec' data-parent='block_2'>＋ 新增規格</button>
                   </td>
                 </tr>
@@ -167,7 +167,7 @@
                 <tr>
                   <td bgcolor="#F7F7F7">標題三 ＊</td>
                   <td bgcolor="#F7F7F7" class="textleft">
-                    <input type='text' value="" name='block_3[title]' placeholder='請輸入標題三' maxlength='255' >
+                    <input type='text' value="" name='block_3[title]' placeholder='請輸入標題三' maxlength='255' pattern=".{1,100}" required title="輸入100個字元以內" >
                   </td>
                 </tr>
                 <tr>
@@ -175,7 +175,7 @@
                   <td  class="textleft">
                     <label>
                       <input type='hidden' name='block_3[specs][0][title]' value='' />
-                      <textarea placeholder='內文' name='block_3[specs][0][content]' cols="45" rows="5"></textarea>
+                      <textarea placeholder='內文' name='block_3[specs][0][content]' cols="45" rows="5" pattern=".{1,}" required title="輸入內容"></textarea>
                     </label>
                   </td>
                 </tr>
@@ -212,19 +212,19 @@
     <tr>
       <td width="110">規格 <%=i%> </td>
       <td width="391"  class="textleft">
-        <input type='text' name='<%=parent%>[specs][<%=i%>][title]' value="" placeholder='請輸入規格 <%=i%>' maxlength='255' >
+        <input type='text' name='<%=parent%>[specs][<%=i%>][title]' value="" placeholder='請輸入規格 <%=i%>' pattern=".{1,200}" required title="輸入200個字元以內"/>
       </td>
       </td>
     </tr>
     <tr>
       <td>內文 <%=i%></td>
-      <td  class="textleft">
-        <input type='text' name='<%=parent%>[specs][<%=i%>][content]' value="" placeholder='請輸入內文 <%=i%>' maxlength='255' >
+      <td class="textleft">
+        <input type='text' name='<%=parent%>[specs][<%=i%>][content]' value="" placeholder='請輸入內文 <%=i%>' pattern=".{1,}" required title="輸入內文"/>
       </td>
     </tr>
   </table>
 </script>
 
 <script id='_file' type='text/x-html-template'>
-  <input type="file" name='files[]' class='file' value='' accept="image/*" />
+  <input type="file" name='files[]' class='file' value='' accept="image/jpg, image/jpeg, image/png" />
 </script>

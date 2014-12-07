@@ -9,10 +9,6 @@ class Products extends Admin_controller {
     parent::__construct ();
   }
 
-  public function x ($offset = 0) {
-    $p = Picture::find ('one', array ('conditions' => array ("id = 3")));
-    $p->file_name->cleanAllFiles ();
-  }
   private function _delete ($ids) {
     array_map (function ($product) {
       array_map (function ($picture) { $picture->file_name->cleanAllFiles (); $picture->delete (); }, $product->pictures);
@@ -100,10 +96,10 @@ class Products extends Admin_controller {
           $block->delete ();
         }, $product->blocks);
 
-        foreach ($files as $file) {
-          $picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''));
-          $picture->file_name->put ($file);
-        }
+        foreach ($files as $file)
+          if (verifyCreateOrm ($picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''))))
+            $picture->file_name->put ($file);
+
         $block = Block::create (array ('product_id' => $product->id, 'title' => $block_1['title']));
         foreach ($block_1['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
         
@@ -148,10 +144,10 @@ class Products extends Admin_controller {
 
       if ($date && $title && $files && $block_1['title'] && $block_1['specs'] && $block_2['title'] && $block_2['specs'] && $block_3['title'] && $block_3['specs'] && is_numeric ($is_enabled)) {
         if (verifyCreateOrm ($product = Product::create (array ('title' => $title, 'is_enabled' => $is_enabled, 'date' => $date, 'category_id' => $category_id)))) {
-          foreach ($files as $file) {
-            $picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''));
-            $picture->file_name->put ($file);
-          }
+          foreach ($files as $file)
+            if (verifyCreateOrm ($picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''))))
+              $picture->file_name->put ($file);
+
           $block = Block::create (array ('product_id' => $product->id, 'title' => $block_1['title']));
           foreach ($block_1['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
           

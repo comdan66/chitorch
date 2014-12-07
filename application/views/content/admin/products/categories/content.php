@@ -66,7 +66,7 @@
 
           <form action="<?php echo base_url (array ('admin', 'products', 'categories'));?>" method="post">
             <article id="navphilo"> 產品分類：
-              <input type='text' value='' name='name' placeholder='請輸入產品分類'/>
+              <input type='text' value='' name='name' placeholder='請輸入產品分類' pattern=".{1,100}" required title="輸入100個字元以內" />
               <button type="submit">新增</button>
               <br /><hr />
             </article>
@@ -86,10 +86,10 @@
                     <tr>
                       <input type='hidden' name='categories[<?php echo $i;?>][id]' value='<?php echo $category->id;?>' />
                       <td class="textleft">
-                        <input type='text' name='categories[<?php echo $i;?>][name]' value="<?php echo $category->name;?>" size="50" maxlength='100' />
+                        <input type='text' name='categories[<?php echo $i;?>][name]' value="<?php echo $category->name;?>" size="50" maxlength='100' pattern=".{1,100}" required title="輸入100個字元以內" />
                       </td>
                       <td class="textleft">
-                        <input type='number' name='categories[<?php echo $i;?>][sort]' value="<?php echo $category->sort;?>" maxlength='10' />
+                        <input type='number' name='categories[<?php echo $i;?>][sort]' value="<?php echo $category->sort;?>" maxlength='10' pattern=".{1,10}" required title="輸入10個字元以內" />
                       </td>
                       <td>
                         <a href="#" class='del_cate'>刪除</a>

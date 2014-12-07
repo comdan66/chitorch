@@ -4,7 +4,7 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
-class PictureUploader extends OrmImageUploader {
+class BannerUploader extends OrmImageUploader {
 
   public function d4_url () {
     return '';

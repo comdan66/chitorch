@@ -13,7 +13,7 @@ class Main extends Admin_controller {
     if (identity ()->user ()) redirect (array ('admin', 'login'));
 
     $message = null;
-    if ($this->has_post () && ($account = $this->input_post ('account')) && ($password = $this->input_post ('password')))
+    if ($this->has_post () && ($account = trim ($this->input_post ('account'))) && ($password = trim ($this->input_post ('password'))))
       if ($user = User::find ('one', array ('select' => 'id, login_count, logined_at', 'conditions' => array ('account = ? AND password = ?', $account, md5 ($password))))) {
         $user->login_count += 1;
         $user->logined_at = date ('Y-m-d H:i:s');
@@ -30,6 +30,16 @@ class Main extends Admin_controller {
     $this->load_view ();
   }
   public function edit () {
-    $this->load_view ();
+    $message = '';
+    if ($this->has_post () && ($account = trim ($this->input_post ('account'))) && ($password = trim ($this->input_post ('password'))) && ($re_password = trim ($this->input_post ('re_password')))) {
+      if ($password == $re_password) {
+        identity ()->user ()->account = $account;
+        identity ()->user ()->password = md5 ($password);
+        identity ()->user ()->save ();
+      } else {
+        $message = '確認密碼錯誤!';
+      }
+    }
+    $this->load_view (array ('message' => $message));
   }
 }
