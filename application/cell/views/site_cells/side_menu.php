@@ -34,12 +34,15 @@
     <a href="<?php echo base_url (array ());?>" class="CMENU">Home</a>
  
     <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Project</a>
-    <div class="sub_menu">
-      <ul>
-        <li><a href="#">類別一</a></li>
-        <li><a href="#">類別二</a></li>
-      </ul>
-    </div>
+<?php if ($categories) {?>
+        <div class="sub_menu">
+          <ul>
+      <?php foreach ($categories as $category) { ?>
+              <li><a href="#" data-id='<?php echo $category->id;?>' class='menu_category'><?php echo $category->name;?></a></li>
+      <?php } ?>
+          </ul>
+        </div>
+<?php } ?>
     <a href="<?php echo base_url (array ('services'));?>" class="CMENU">Service</a>
     <a href="<?php echo base_url (array ('contacts'));?>" class="CMENU">Contact</a>
   </div>    
