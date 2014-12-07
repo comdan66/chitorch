@@ -150,7 +150,7 @@
       <br>
       <p>
         <a href="products.html">
-          <button type="submit">確定新增</button>
+          <button type="submit">確定修改</button>
         </a>
       </p>
     </article>

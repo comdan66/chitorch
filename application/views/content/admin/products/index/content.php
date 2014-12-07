@@ -43,7 +43,7 @@
               <td><label><input type="checkbox" name='delete_ids[]' value='<?php echo $product->id;?>'></label></td>
               <td><?php echo $product->date->format ('Y-m-d');?></td>
               <td class="textleft"><?php echo $product->category ? $product->category->name : '未分類';?></td>
-              <td class="textleft"><?php echo $product->id;?></td>
+              <td class="textleft"><?php echo $product->title;?></td>
               <td><a href="<?php echo base_url (array ('admin', 'products', 'edit', $product->id));?>">修改</a></td>
               <td><?php echo $product->is_enabled ? '上架' : '下架';?></td>
             </tr>
