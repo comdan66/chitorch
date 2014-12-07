@@ -16,7 +16,7 @@
         <link href="<?php echo base_url (array ('resource', 'site', 'css', 'main.css'));?>" rel="stylesheet" type="text/css">
     <![endif]-->
   </head>
-  <body class="centbg">
+  <body class="centbg" style='background: #000 url(<?php echo Banner::find ('one', array ('order' => 'id DESC', 'conditions' => array ()))->file_name->url ();?>) center center fixed no-repeat;;'>
 <?php echo isset ($hidden) ? $hidden:'';?>
 <?php echo isset ($content) ? $content : '';?>
   </body>
