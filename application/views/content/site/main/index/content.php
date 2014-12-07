@@ -9,7 +9,7 @@
     <div id="MENUI">
       <ul>
         <li><a href="<?php echo base_url (array ('abouts'));?>">About</a></li>
-        <li><a href="<?php echo base_url (array ('products'));?>">Project</a></li>
+        <li><a href="<?php echo base_url (array ('products'));?>">Product</a></li>
 <!--               <li><a href="media.html">Media</a></li>
         <li><a href="news.html">News</a></li> -->
         <li><a href="<?php echo base_url (array ('services'));?>">Service</a></li>

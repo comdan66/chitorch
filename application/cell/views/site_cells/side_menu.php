@@ -9,7 +9,7 @@
     <!-- 左邊菜單_桌機板+平板 START -->
   <div id="warpB">
     <a href="<?php echo base_url (array ());?>" class="CMENU">Home</a>
-    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Project</a>
+    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Product</a>
 <?php if ($categories) {?>
         <div class="sub_menu">
           <ul>
@@ -33,7 +33,7 @@
     <h3>X</h3>
     <a href="<?php echo base_url (array ());?>" class="CMENU">Home</a>
  
-    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Project</a>
+    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Product</a>
 <?php if ($categories) {?>
         <div class="sub_menu">
           <ul>
