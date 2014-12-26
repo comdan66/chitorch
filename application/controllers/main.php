@@ -10,16 +10,9 @@ class Main extends Site_controller {
   }
 
   public function index () {
+    
     $this->set_frame_path ('frame', 'site_index')
+         ->add_javascript (base_url (array ('resource', 'site', 'js', 'supersized.2.0.js')))
          ->load_view (null);
-  }
-  public function create () {
-    // User::create (array ('account' => 'oa', 'password' => md5 ('123')));
-  }
-  public function demo () {
-    // Category::create (array ('name' => 'cate_1'));
-    // Category::create (array ('name' => 'cate_2'));
-    // Category::create (array ('name' => 'cate_3'));
-    // Category::create (array ('name' => 'cate_4'));
   }
 }
