@@ -12,18 +12,7 @@ class Migration_Add_blocks extends CI_Migration {
               `product_id` int(11) NOT NULL,
               `created_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
               `updated_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
-              PRIMARY KEY (`id`),
-              KEY `product_id_index` (`product_id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-    $this->db->query ($sql);
-
-    $sql = "CREATE TABLE `delete_blocks` (
-              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-              `origin_id` int(11) NOT NULL,
-              `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-              `product_id` int(11) NOT NULL,
-              `created_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
-              `updated_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
+              `type` int(11) NOT NULL DEFAULT '1',
               PRIMARY KEY (`id`),
               KEY `product_id_index` (`product_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";

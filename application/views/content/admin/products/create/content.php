@@ -50,41 +50,6 @@
           </td>
         </tr>
         <tr>
-          <td bgcolor="#F7F7F7">標題一 ＊</td>
-          <td bgcolor="#F7F7F7" class="textleft">
-            <input type='text' name='block_1[title]' value="" placeholder='請輸入標題一' maxlength='100' pattern=".{1,100}" required title="輸入100個字元以內" />
-            <button type="button" class='add_spec' data-parent='block_1'>＋ 新增規格</button>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="left" valign="top" class='block_1_specs'></td>
-        </tr>
-        <tr>
-          <td bgcolor="#F7F7F7">標題二 ＊</td>
-          <td bgcolor="#F7F7F7" class="textleft">
-            <input type='text' value="" name='block_2[title]' placeholder='請輸入標題二' maxlength='255' pattern=".{1,100}" required title="輸入100個字元以內" >
-            <button type="button" class='add_spec' data-parent='block_2'>＋ 新增規格</button>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="left" valign="top" class='block_2_specs'></td>
-        </tr>
-        <tr>
-          <td bgcolor="#F7F7F7">標題三 ＊</td>
-          <td bgcolor="#F7F7F7" class="textleft">
-            <input type='text' value="" name='block_3[title]' placeholder='請輸入標題三' maxlength='255' pattern=".{1,100}" required title="輸入100個字元以內" >
-          </td>
-        </tr>
-        <tr>
-          <td >內文</td>
-          <td  class="textleft">
-            <label>
-              <input type='hidden' name='block_3[specs][0][title]' value='' />
-              <textarea placeholder='內文' name='block_3[specs][0][content]' cols="45" rows="5" pattern=".{1,}" required title="輸入內容"></textarea>
-            </label>
-          </td>
-        </tr>
-        <tr>
           <td>狀態＊</td>
           <td class="textleft">
             <select name='is_enabled'>
@@ -94,29 +59,59 @@
           </td>
         </tr>
       </table>
-      <br>
-      <p>
-        <a href="products.html">
-          <button type="submit">確定新增</button>
-        </a>
-      </p>
+      <hr>
+        <button type="button" id='add_block1'>加入區塊1</button>
+        <button type="button" id='add_block2'>加入區塊2</button>
+        <button type="submit">確定新增</button>
     </article>
   </form>
 </section>
 
-<script id='_spec' type='text/x-html-template'>
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+<script id='_block1' type='text/x-html-template'>
+  <table data-index='<%=index%>' data-count='0' width="100%" border="0" cellspacing="0" cellpadding="0" style='margin: 15px auto;'>
     <tr>
-      <td width="110">規格 <%=i%> </td>
-      <td width="391"  class="textleft">
-        <input type='text' name='<%=parent%>[specs][<%=i%>][title]' value="" placeholder='請輸入規格 <%=i%>' pattern=".{1,200}" required title="輸入200個字元以內"/>
+      <td bgcolor="#F7F7F7" width="110">標題</td>
+      <td bgcolor="#F7F7F7" class="textleft" width="391">
+        <input type="hidden" name='block[<%=index%>][type]' value='1' />
+        <input type='text' value="" name='block[<%=index%>][title]' placeholder='請輸入標題' title="輸入100個字元以內" >
+        <button type="button" class='add_spec' data-parent='block_2'>＋ 新增規格</button>
+        <div class='delete'>x</div>
       </td>
+    </tr>
+  </table>
+</script>
+<script id='_block1_spec' type='text/x-html-template'>
+  <tr>
+    <td>規格</td>
+    <td class="textleft">
+      <input type='text' name='block[<%=i%>][specs][<%=c%>][title]' value="" placeholder='請輸入規格' title="輸入200個字元以內"/>
+    </td>
+    </td>
+  </tr>
+  <tr>
+    <td>內文</td>
+    <td class="textleft">
+      <input type='text' name='block[<%=i%>][specs][<%=c%>][content]' value="" placeholder='請輸入內文' title="輸入內文"/>
+    </td>
+  </tr>
+</script>
+<script id='_block2' type='text/x-html-template'>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style='margin: 15px auto;'>
+    <tr>
+      <td bgcolor="#F7F7F7">標題</td>
+      <td bgcolor="#F7F7F7" class="textleft">
+        <input type="hidden" name='block[<%=index%>][type]' value='2' />
+        <input type='text' value="" name='block[<%=index%>][title]' placeholder='請輸入標題' maxlength='255' title="輸入100個字元以內" >
+        <div class='delete'>x</div>
       </td>
     </tr>
     <tr>
-      <td>內文 <%=i%></td>
-      <td class="textleft">
-        <input type='text' name='<%=parent%>[specs][<%=i%>][content]' value="" placeholder='請輸入內文 <%=i%>' pattern=".{1,}" required title="輸入內文"/>
+      <td >內文</td>
+      <td  class="textleft">
+        <label>
+          <input type='hidden' name='block[<%=index%>][specs][0][title]' value='' />
+          <textarea placeholder='內文' name='block[<%=index%>][specs][0][content]' cols="45" rows="5" title="輸入內文"></textarea>
+        </label>
       </td>
     </tr>
   </table>

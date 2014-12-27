@@ -16,7 +16,7 @@
         <a href="<?php echo base_url (array ());?>">奇拓室內裝修設計 CHI-TORCH</a>
       </h1>
     </div>
-      
+
     <div id="MENUI">
       <ul>
         <li><a href="<?php echo base_url (array ('abouts'));?>" data-en='About' data-tw='關於'>About</a></li>
@@ -25,10 +25,10 @@
         <li><a href="<?php echo base_url (array ('new_products'));?>" data-en='News' data-tw='新聞'>News</a></li>
         <li><a href="<?php echo base_url (array ('services'));?>" data-en='Service' data-tw='服務'>Service</a></li>
         <li><a href="<?php echo base_url (array ('contacts'));?>" data-en='Contact' data-tw='聯絡'>Contact</a></li>
-      </ul>   
+      </ul>
     </div>
   </div>
-    
+
   <div id="DOWNI">
     <p class="IFN">106&nbsp;&nbsp;台北市大安區復興南路一段128號六樓</br>
     Tel&nbsp;&nbsp;+886-2-8772-1881</br>

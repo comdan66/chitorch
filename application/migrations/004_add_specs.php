@@ -17,18 +17,5 @@ class Migration_Add_specs extends CI_Migration {
               KEY `block_id_index` (`block_id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
     $this->db->query ($sql);
-
-    $sql = "CREATE TABLE `delete_specs` (
-              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-              `origin_id` int(11) NOT NULL,
-              `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-              `content` text,
-              `block_id` int(11) NOT NULL,
-              `created_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
-              `updated_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "',
-              PRIMARY KEY (`id`),
-              KEY `block_id_index` (`block_id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-    $this->db->query ($sql);
   }
 }

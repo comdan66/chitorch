@@ -2,13 +2,13 @@
   <div id="TOPTITLE">
     <p class="bigtitle">PROJECT</p>
   </div>
-      
+
   <div id="SMATITLE">
     <div id="padech">
 <?php echo $pagination; ?>
     </div>
   </div>
-      
+
   <div id="CENTRB">
     <div id="probox">
 <?php if ($products) {
@@ -20,7 +20,6 @@
             <p class="protitle">
               <a href="#">// <?php echo $product->category ? $product->category->name : '未分類';?></a>
             </p>
-            <p class="protype"><?php echo $product->title;?></p>
           </div>
   <?php }
       } ?>

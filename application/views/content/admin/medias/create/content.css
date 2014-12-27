@@ -1,0 +1,34 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 6, content.scss */
+.error {
+  width: 488px;
+  color: #ca0c0c;
+}
+
+/* line 10, content.scss */
+.textleft .files {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 15, content.scss */
+.textleft .files .add_pic {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 8.5px;
+}
+
+/* line 24, content.scss */
+.textleft .files .file {
+  width: calc(100% - 40px);
+  cursor: pointer;
+  border-bottom: 1px solid #eeeeee;
+}

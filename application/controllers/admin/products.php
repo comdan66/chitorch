@@ -27,7 +27,7 @@ class Products extends Admin_controller {
     $start       = trim ($this->input_post ('start'));
     $end         = trim ($this->input_post ('end'));
     $category_id = trim ($this->input_post ('category_id'));
-    
+
     if ($delete_ids = $this->input_post ('delete_ids'))
       $this->_delete ($delete_ids);
 
@@ -37,7 +37,7 @@ class Products extends Admin_controller {
     $total = Product::count (array ('conditions' => $conditions));
     $offset = $offset < $total ? $offset : 0;
     $products = Product::find ('all', array ('order' => 'id DESC', 'offset' => $offset, 'limit' => $limit, 'conditions' => $conditions));
-    
+
     $page_total = ceil ($total / $limit);
     $now_page = ($offset / $limit + 1);
     $next_link = $now_page < $page_total ? base_url (array ('admin', $this->get_class (), $this->get_method (), $now_page * $limit)) : '#';
@@ -55,7 +55,7 @@ class Products extends Admin_controller {
       if ($categories = $this->input_post ('categories')) {
         if ($delete_ids = array_diff (field_array (Category::find ('all', array ('select' => 'id')), 'id'), array_map (function ($category) { return $category['id']; }, $categories))) {
           Category::delete_all (array ('conditions' => array ('id IN (?)', $delete_ids)));
-          Product::update_all (array ('set' => 'category_id = 0', 'conditions' => array ('category_id IN (?)', $delete_ids))); 
+          Product::update_all (array ('set' => 'category_id = 0', 'conditions' => array ('category_id IN (?)', $delete_ids)));
         }
         array_map (function ($category) {
           if ($category['id'] && trim ($category['name']) && trim ($category['sort']))
@@ -71,7 +71,7 @@ class Products extends Admin_controller {
   public function edit ($id = 0) {
     if (!($product = Product::find ('one', array ('conditions' => array ('id = ?', $id)))))
       redirect (array ('admin', $this->get_class ()));
-    
+
     if ($this->has_post ()) {
       $title = trim ($this->input_post ('title'));
       $is_enabled = $this->input_post ('is_enabled');
@@ -81,16 +81,9 @@ class Products extends Admin_controller {
       $files = $this->input_post ('files[]', true, true);
       $pics = ($pics = $this->input_post ('pics')) ? $pics : array ();
 
-      $block_1 = $this->input_post ('block_1');
-      $block_1['specs'] = array_filter ($block_1['specs'], function ($spec) { return $spec['title'] && $spec['content']; });
+      $blocks = $this->input_post ('block');
 
-      $block_2 = $this->input_post ('block_2');
-      $block_2['specs'] = array_filter ($block_2['specs'], function ($spec) { return $spec['title'] && $spec['content']; });
-
-      $block_3 = $this->input_post ('block_3');
-      $block_3['specs'] = array_filter ($block_3['specs'], function ($spec) { return $spec['title'] || $spec['content']; });
-
-      if ($date && $title && ($files || $pics) && $block_1['title'] && $block_1['specs'] && $block_2['title'] && $block_2['specs'] && $block_3['title'] && $block_3['specs'] && is_numeric ($is_enabled)) {
+      if ($date && $title && ($files || $pics) && is_numeric ($is_enabled)) {
         if ($delete_pic_id = array_diff (field_array ($product->pictures, 'id'), $pics))
           array_map (function ($picture) {
             $picture->file_name->cleanAllFiles ();
@@ -106,28 +99,33 @@ class Products extends Admin_controller {
           if (verifyCreateOrm ($picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''))))
             $picture->file_name->put ($file);
 
-        $block = Block::create (array ('product_id' => $product->id, 'title' => $block_1['title']));
-        foreach ($block_1['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-        
-        $block = Block::create (array ('product_id' => $product->id, 'title' => $block_2['title']));
-        foreach ($block_2['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-        
-        $block = Block::create (array ('product_id' => $product->id, 'title' => $block_3['title']));
-        foreach ($block_3['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-        
+        if ($blocks) {
+          foreach ($blocks as $block) {
+            $specs = $block['specs'];
+            $block = Block::create (array ('product_id' => $product->id, 'title' => $block['title'], 'type' => $block['type']));
+
+            foreach ($specs as $spec)
+              Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
+          }
+        }
         $product->title = $title;
         $product->is_enabled = $is_enabled;
         $product->category_id = $category_id;
         $product->date = $date;
         $product->save ();
-        
+
         identity ()->set_session ('_flash_message', '修改成功!', true);
         redirect (array ('admin', 'products'));
       } else {
         $this->load_view (array ('message' => '填寫的資料不完整！', 'product' => $product));
       }
     } else {
-      $this->load_view (array ('product' => $product));
+      $data = array_map (function ($block) {
+              return array ('title' => $block->title, 'type' => $block->type, 'specs' => array_map (function ($spec) {
+                return array ('title' => $spec->title, 'content' => $spec->content);
+              }, $block->specs));
+            }, $product->blocks);
+      $this->load_view (array ('product' => $product, 'data' => $data));
     }
   }
   public function create () {
@@ -139,31 +137,23 @@ class Products extends Admin_controller {
 
       $files = $this->input_post ('files[]', true, true);
 
-      $block_1 = $this->input_post ('block_1');
-      $block_1['specs'] = array_filter ($block_1['specs'], function ($spec) { return $spec['title'] && $spec['content']; });
+      $blocks = $this->input_post ('block');
 
-      $block_2 = $this->input_post ('block_2');
-      $block_2['specs'] = array_filter ($block_2['specs'], function ($spec) { return $spec['title'] && $spec['content']; });
-
-      $block_3 = $this->input_post ('block_3');
-      $block_3['specs'] = array_filter ($block_3['specs'], function ($spec) { return $spec['title'] || $spec['content']; });
-
-
-      if ($date && $title && $files && $block_1['title'] && $block_1['specs'] && $block_2['title'] && $block_2['specs'] && $block_3['title'] && $block_3['specs'] && is_numeric ($is_enabled)) {
+      if ($date && $title && $files && is_numeric ($is_enabled)) {
         if (verifyCreateOrm ($product = Product::create (array ('title' => $title, 'is_enabled' => $is_enabled, 'date' => $date, 'category_id' => $category_id)))) {
           foreach ($files as $file)
             if (verifyCreateOrm ($picture = Picture::create (array ('product_id' => $product->id, 'file_name' => ''))))
               $picture->file_name->put ($file);
 
-          $block = Block::create (array ('product_id' => $product->id, 'title' => $block_1['title']));
-          foreach ($block_1['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-          
-          $block = Block::create (array ('product_id' => $product->id, 'title' => $block_2['title']));
-          foreach ($block_2['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-          
-          $block = Block::create (array ('product_id' => $product->id, 'title' => $block_3['title']));
-          foreach ($block_3['specs'] as $spec) Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
-          
+          if ($blocks) {
+            foreach ($blocks as $block) {
+              $specs = $block['specs'];
+              $block = Block::create (array ('product_id' => $product->id, 'title' => $block['title'], 'type' => $block['type']));
+
+              foreach ($specs as $spec)
+                Spec::create (array ('block_id' => $block->id, 'title' => $spec['title'], 'content' => $spec['content']));
+            }
+          }
           identity ()->set_session ('_flash_message', '新增成功!', true);
           redirect (array ('admin', 'products'));
         } else {

@@ -4,17 +4,32 @@
  */
 
 $(function() {
+  var index = $('table').length;
   $('.add_pic').click (function () {
     $('.files').append (_.template ($('#_file').html (), {}) ({}))
   }).click ();
 
-  $('.add_spec').click (function () {
-    var $specs_selector = $('.' + $(this).data ('parent') + '_specs');
-    var obj = {i: $specs_selector.children ('table').length + 1, parent: $(this).data ('parent')};
-    $specs_selector.append (_.template ($('#_spec').html (), obj) (obj));
+  $('#add_block1').click (function () {
+    var obj = {index: index++};
+    $(_.template ($('#_block1').html (), obj) (obj)).insertAfter ($('table').last ());
+  });
+  $('#add_block2').click (function () {
+    var obj = {index: index++};
+    $(_.template ($('#_block2').html (), obj) (obj)).insertAfter ($('table').last ());
+  });
+  $('body').on ('click', '.add_spec', function () {
+    var $t = $(this).parents ('table');
+    var i = $t.data ('index');
+    var c = $t.data ('count');
+    $t.data ('count', c + 1);
+
+    var obj = {i: i, c: c};
+    $(_.template ($('#_block1_spec').html (), obj) (obj)).insertAfter ($t.find ('tr').last ());
+  })
+
+  $('body').on ('click', '.delete', function () {
+    $(this).parents ('table').remove ();
   });
 
-  $('.del_pic').click (function () {
-    $(this).parents ('li').remove ();
-  });
+
 });
