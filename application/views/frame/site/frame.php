@@ -19,7 +19,10 @@
   </head>
   <body>
 <?php echo isset ($hidden) ? $hidden:'';?>
+
+
     <div id="ALLBCENT">
+
       <!-- 左邊 START -->
 <?php echo render_cell ('site_cells', 'side_menu');?>
       <!-- 左邊 END -->

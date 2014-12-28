@@ -2,3 +2,117 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+
+@import "_oa";
+
+#right_slide {
+  position: absolute;
+  display: none;
+}
+#slide_cover {
+  display: none;
+  position: relative;
+}
+@media screen and (min-width: 0px) and (max-width: 736px) {
+  #ALLBCENT {
+    position: relative;
+
+    #LEFTC h5 {
+      cursor: pointer;
+    }
+    
+    $rightSlideWidth: 250px;
+    $navbarHeight: 70px;
+    #slide_cover {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      top: $navbarHeight;
+      left: -100%;
+      z-index: 99998;
+
+      background-color: rgba(0, 0, 0, .3);
+      @include transition(all .4s);
+    }
+    #right_slide {
+      position: absolute;
+      display: inline-block;
+      width: $rightSlideWidth;
+      height: calc(100% - #{$navbarHeight});
+      top: $navbarHeight;
+      right: 0;
+      z-index: 99999;
+
+      background-color: rgba(51, 51, 51, 1);
+      @include transition(all .5s cubic-bezier(0.325, 0.825, 0.470, 1));
+      @include box-shadow(-2px 0 4px rgba(100, 100, 100, 0.5));
+      @include box-sizing(border-box);
+
+      &.close {
+        right: 0 - ($rightSlideWidth + 5px);
+        & ~ #slide_cover {
+          left: -100%;
+        }
+        .units {
+          .unit {
+            &.shimmer {
+              @include animation (none);
+            }
+          }
+        }
+      }
+      & ~ #slide_cover {
+        left: 0;
+      }
+      .units {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        text-align: left;
+        @include box-sizing(border-box);
+
+        .ug {
+        @include box-sizing(border-box);
+          display: none;
+          &.open {
+            display: block;
+          }
+          .unit {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+        }
+        .unit {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          color: rgba(130, 130, 130, 1);
+          padding: 10px;
+
+          padding-left: 20px;
+          font-size: 18px;
+          border-bottom: 1px solid transparent;
+
+          @include overflow-docx3();
+          @include box-sizing(border-box);
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 1);
+          }
+          &.title {
+            padding-left: 10px;
+          }
+          a {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

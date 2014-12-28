@@ -5,7 +5,7 @@
   <article id="navphilo">
     <form action="<?php echo base_url (array ('admin', 'products'));?>" method="post">
       日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期：
-      <input type='text' class="date" value='<?php echo $start ? $start : '';?>' name='start' /> ~ <input type='text' class="date" value='<?php echo $end ? $end : '';?>' name='end' />
+      <input type='text' class="date" value='<?php echo $start ? $start : '';?>' name='start' pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" required title="請輸入正確的時間格式 (ex: 1999-01-01)"/> ~ <input type='text' class="date" value='<?php echo $end ? $end : '';?>' name='end' pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" required title="請輸入正確的時間格式 (ex: 1999-01-01)"/>
       <br />
       <br />
       產品分類：

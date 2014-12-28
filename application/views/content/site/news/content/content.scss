@@ -1,0 +1,40 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+ 
+ @import "_oa";
+.pics {
+  float: left;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+
+  img {
+    max-width: 250px;
+    float: left;
+    margin: 10px;
+  }
+}
+#y2 {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  height: auto;
+
+  iframe {
+    width: 100%;
+  }
+}
+*.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}

@@ -5,6 +5,9 @@
 
 $(function() {
   var index = $('table').length;
+  $('.del_pic').click (function () {
+    $(this).parents ('li').remove ()
+  });
   $('.add_pic').click (function () {
     $('.files').append (_.template ($('#_file').html (), {}) ({}))
   }).click ();

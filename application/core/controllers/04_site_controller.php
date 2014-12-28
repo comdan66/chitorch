@@ -43,7 +43,7 @@ class Site_controller extends Oa_controller {
                 ->add_javascript (base_url (array ('resource', 'jquery-ui-1.10.3.custom', 'jquery-ui-1.10.3.custom.min.js')))
                 ->add_javascript (base_url (array ('resource', 'jquery.jgrowl_v1.3.0', 'jquery.jgrowl.js')))
                 ->add_javascript (base_url (array ('resource', 'site', 'js', 'slider.js')))
-                ->add_javascript (base_url (array ('resource', 'site', 'js', 'flycan.js')))
+              
                 ;
   }
   private function _add_footer () {

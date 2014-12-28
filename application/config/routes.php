@@ -42,6 +42,9 @@ $route['admin/login'] = "admin/main/login";
 $route['admin/logout'] = "admin/main/logout";
 
 $route['products/(:num)'] = "products/content/$1";
+$route['medias/(:num)'] = "medias/index/$1";
+$route['news/(:num)'] = "news/content/$1";
+$route['abouts/(:num)'] = "abouts/index/$1";
 
 $route['default_controller'] = "main";
 $route['admin'] = "admin/main";

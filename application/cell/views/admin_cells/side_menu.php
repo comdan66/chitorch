@@ -32,6 +32,13 @@
           </ul>
         </li>
 
+        <li class="item3"><a href="#"><span>最新消息管理</span></a>
+          <ul>
+            <li class="subitem1"><a href="<?php echo base_url (array ('admin', 'news'));?>">最新消息列表</a></li>
+            <li class="subitem2"><a href="<?php echo base_url (array ('admin', 'news', 'create'));?>">新增最新消息</a></li>
+          </ul>
+        </li>
+
 
         <li class="item5"><a href="#">網站管理員</a>
           <ul>

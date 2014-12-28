@@ -32,7 +32,7 @@ class Products extends Site_controller {
       'total_rows' => $total,
       'page_query_string' => true,
       'query_string_segment' => 'per_page',
-      'num_links' => 2 + ((3 - $s) > 0 ? 3 - $s : ($s - ($a - 3) > 0 ? $s - ($a - 3): 0)),
+      'num_links' => 2 + ((3 - $s) > 0 ? 3 - $s - 1 : ($s - ($a - 3) > 0 ? $s - ($a - 3): 0)),
       'per_page' => $limit,
       'base_url' => base_url (array ($this->get_class (), $this->get_method ())),
       'first_link' => '',
@@ -60,6 +60,7 @@ class Products extends Site_controller {
     $pagination = $this->pagination->create_links ();
 
     $this->add_hidden (array ('id' => '_is_projects', 'value' => true))
+         ->add_hidden (array ('id' => '_class', 'value' => 'products'))
          ->load_view (array ('products' => $products, 'pagination' => $pagination));
   }
 }

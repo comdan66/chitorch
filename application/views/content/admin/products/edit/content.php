@@ -46,7 +46,6 @@
             <br />
             ( 圖片尺寸：XXX*XXX像素 )
             <br />
-            * 最多12張圖
             <div class="pic">
               <ul>
           <?php foreach ($product->pictures as $picture) { ?>

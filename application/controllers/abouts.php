@@ -9,7 +9,8 @@ class Abouts extends Site_controller {
     parent::__construct ();
   }
 
-  public function index () {
-    $this->load_view (null);
+  public function index ($t = 0) {
+    $this->add_hidden (array ('id' => '_class', 'value' => 'abouts'))
+         ->load_view (array ('t' => $t));
   }
 }

@@ -1,0 +1,49 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 9, content.scss */
+.timecheck a {
+  border: 1px solid #898a8b;
+  border-width: 0 1px 0 1px;
+  padding: 0 !important;
+}
+/* line 13, content.scss */
+.timecheck a + a {
+  border-left: 0;
+}
+/* line 16, content.scss */
+.timecheck a .timechecko {
+  margin: 0;
+  cursor: pointer;
+  color: rgba(102, 102, 102, 0.7);
+  border: 0;
+}
+/* line 22, content.scss */
+.timecheck a .timechecko:hover {
+  color: #666666;
+}
+/* line 25, content.scss */
+.timecheck a .timechecko.active {
+  color: #0a0a0a;
+}
+/* line 28, content.scss */
+.timecheck a .timechecko + .timechecko {
+  border-left: 0;
+}

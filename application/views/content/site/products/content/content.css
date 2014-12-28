@@ -6,3 +6,14 @@
 .Rprotitle:not(:first-child) {
   margin-top: 50px;
 }
+
+/* line 10, content.scss */
+#ALLBCENT #RIGHTC #CENTRB #prophotobox #SMALL img {
+  margin: 2px 0 2px 2.5px;
+}
+
+/* line 14, content.scss */
+.Rprosmtitle {
+  width: auto;
+  margin: 5px;
+}

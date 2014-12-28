@@ -84,7 +84,7 @@ class Products extends Admin_controller {
       $blocks = $this->input_post ('block');
 
       if ($date && $title && ($files || $pics) && is_numeric ($is_enabled)) {
-        if ($delete_pic_id = array_diff (field_array ($product->pictures, 'id'), $pics))
+        if ($delete_pic_ids = array_diff (field_array ($product->pictures, 'id'), $pics))
           array_map (function ($picture) {
             $picture->file_name->cleanAllFiles ();
             $picture->delete ();
@@ -120,12 +120,7 @@ class Products extends Admin_controller {
         $this->load_view (array ('message' => '填寫的資料不完整！', 'product' => $product));
       }
     } else {
-      $data = array_map (function ($block) {
-              return array ('title' => $block->title, 'type' => $block->type, 'specs' => array_map (function ($spec) {
-                return array ('title' => $spec->title, 'content' => $spec->content);
-              }, $block->specs));
-            }, $product->blocks);
-      $this->load_view (array ('product' => $product, 'data' => $data));
+      $this->load_view (array ('product' => $product));
     }
   }
   public function create () {

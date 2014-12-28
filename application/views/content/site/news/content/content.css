@@ -1,0 +1,59 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 7, content.scss */
+.pics {
+  float: left;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+/* line 14, content.scss */
+.pics img {
+  max-width: 250px;
+  float: left;
+  margin: 10px;
+}
+
+/* line 20, content.scss */
+#y2 {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+  height: auto;
+}
+/* line 27, content.scss */
+#y2 iframe {
+  width: 100%;
+}
+
+/* line 31, content.scss */
+*.clearfix {
+  *zoom: 1;
+}
+/* line 34, content.scss */
+*.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}

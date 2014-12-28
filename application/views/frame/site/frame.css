@@ -2,3 +2,155 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 8, frame.scss */
+#right_slide {
+  position: absolute;
+  display: none;
+}
+
+/* line 12, frame.scss */
+#slide_cover {
+  display: none;
+  position: relative;
+}
+
+@media screen and (min-width: 0px) and (max-width: 736px) {
+  /* line 17, frame.scss */
+  #ALLBCENT {
+    position: relative;
+  }
+  /* line 20, frame.scss */
+  #ALLBCENT #LEFTC h5 {
+    cursor: pointer;
+  }
+  /* line 26, frame.scss */
+  #ALLBCENT #slide_cover {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 70px;
+    left: -100%;
+    z-index: 99998;
+    background-color: rgba(0, 0, 0, 0.3);
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  /* line 38, frame.scss */
+  #ALLBCENT #right_slide {
+    position: absolute;
+    display: inline-block;
+    width: 250px;
+    height: calc(100% - 70px);
+    top: 70px;
+    right: 0;
+    z-index: 99999;
+    background-color: #333333;
+    -moz-transition: all 0.5s cubic-bezier(0.325, 0.825, 0.47, 1);
+    -o-transition: all 0.5s cubic-bezier(0.325, 0.825, 0.47, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.325, 0.825, 0.47, 1);
+    transition: all 0.5s cubic-bezier(0.325, 0.825, 0.47, 1);
+    -moz-box-shadow: -2px 0 4px rgba(100, 100, 100, 0.5);
+    -webkit-box-shadow: -2px 0 4px rgba(100, 100, 100, 0.5);
+    box-shadow: -2px 0 4px rgba(100, 100, 100, 0.5);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 52, frame.scss */
+  #ALLBCENT #right_slide.close {
+    right: -255px;
+  }
+  /* line 54, frame.scss */
+  #ALLBCENT #right_slide.close ~ #slide_cover {
+    left: -100%;
+  }
+  /* line 59, frame.scss */
+  #ALLBCENT #right_slide.close .units .unit.shimmer {
+    -moz-animation: none;
+    -webkit-animation: none;
+    animation: none;
+  }
+  /* line 65, frame.scss */
+  #ALLBCENT #right_slide ~ #slide_cover {
+    left: 0;
+  }
+  /* line 68, frame.scss */
+  #ALLBCENT #right_slide .units {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 78, frame.scss */
+  #ALLBCENT #right_slide .units .ug {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  /* line 81, frame.scss */
+  #ALLBCENT #right_slide .units .ug.open {
+    display: block;
+  }
+  /* line 84, frame.scss */
+  #ALLBCENT #right_slide .units .ug .unit {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  /* line 89, frame.scss */
+  #ALLBCENT #right_slide .units .unit {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    color: #828282;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid transparent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 103, frame.scss */
+  #ALLBCENT #right_slide .units .unit:hover {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  /* line 107, frame.scss */
+  #ALLBCENT #right_slide .units .unit.title {
+    padding-left: 10px;
+  }
+  /* line 110, frame.scss */
+  #ALLBCENT #right_slide .units .unit a {
+    display: inline-block;
+    width: 100%;
+  }
+}
