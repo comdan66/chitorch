@@ -13,6 +13,21 @@
   display: none;
   position: relative;
 }
+#ALLBCENT #LEFTC #warpB {
+  .CMENU {
+    line-height: 26px;
+  }
+  .sub_menu ul li {
+    &:last-child {
+      margin-bottom: 10px;
+    }
+    a {
+      margin: 0;
+      margin-left: 10px;
+      
+    }
+  }
+}
 @media screen and (min-width: 0px) and (max-width: 736px) {
   #ALLBCENT {
     position: relative;

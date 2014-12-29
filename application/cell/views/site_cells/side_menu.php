@@ -17,7 +17,7 @@
         <li><a href="<?php echo base_url (array ('abouts', 2));?>" class='menu_category'>設計師簡介</a></li>
       </ul>
     </div>
-    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Product</a>
+    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">Projtct</a>
 <?php if ($categories) {?>
         <div class="sub_menu">
           <ul>
@@ -46,7 +46,7 @@
       <a href='<?php echo base_url (array ('abouts', 1));?>'><div class='unit'>公司概況與經營理念</div></a>
       <a href='<?php echo base_url (array ('abouts', 2));?>'><div class='unit'>設計師簡介</div></a>
     </div>
-    <a href='<?php echo base_url (array ('products'));?>'><div class='unit title'>Product</div></a>
+    <a href='<?php echo base_url (array ('products'));?>'><div class='unit title'>Projtct</div></a>
     <div class='ug ps'>
 <?php foreach ($categories as $category) { ?>
         <a href="#" data-id='<?php echo $category->id;?>'><div class='unit'><?php echo $category->name;?></div></a>

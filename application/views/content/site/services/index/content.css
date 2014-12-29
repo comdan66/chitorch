@@ -2,3 +2,19 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+/* line 6, content.scss */
+#ALLBCENT #RIGHTC .SERbox .SERCENbox .cenBOX {
+  height: 260px;
+}
+
+/* line 9, content.scss */
+.KKK {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  width: 102%;
+}
+/* line 15, content.scss */
+.KKK .sercgre {
+  margin-bottom: 17px;
+}

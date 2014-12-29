@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- iOS 介面調整 -->
+<!-- 以下兩個效果 必須在使用者將連結加入主畫面螢幕 從桌面開啟才有效 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta charset="ISO-8859-1">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+
+<title>奇拓室內裝修設計 CHI-TORCH</title>
+<link rel="chitorch icon" href="./images/tiicon.ico" />
+
+<meta content="奇拓" name="description">
+<meta content="奇拓,chitorch,台北室內設計,室內裝潢,空間設計,住宅設計,居家裝潢,住家裝潢,設計整合,室內裝修,室內規劃,辦公室設計,裝修工程,商業空間設計" name="keywords">
+
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+</head>
+
+<body class="centbg">
+
+	<div id="supersize">
+	<a><img src="images/index/1.jpg" /></a>
+	<a><img src="images/index/2.jpg" /></a>
+    <a><img src="images/index/3.jpg" /></a>
+    <a><img src="images/index/4.jpg" /></a>
+    <a><img src="images/index/5.jpg" /></a>
+    <a><img src="images/index/6.jpg" /></a>
+    <a><img src="images/index/7.jpg" /></a>
+    <a><img src="images/index/8.jpg" /></a>
+	</div>
+    
+    
+    <div id="ALLB">
+    	<!-- 上方 -->
+    	<div id="TOPI">
+        	<!-- LOGO START-->
+        	<div id="LOGOI">
+            	<h1><a href="index.html">奇拓室內裝修設計 CHI-TORCH</a></h1>
+            </div>
+            <!-- LOGO END-->
+            
+            <!-- 主選單區 START -->
+            <div id="MENUI">
+                  <ul>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="project.html">Project</a></li>
+                      <li><a href="media.html">Media</a></li>
+                      <li><a href="news.html">News</a></li>
+                      <li><a href="service.html">Service</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                  </ul>	  
+            </div>
+            <!-- 主選單區 END -->
+        </div>
+        
+        <div id="DOWNI">
+        	<!-- Floor START-->
+                <p class="IFN">106&nbsp;&nbsp;台北市大安區復興南路一段128號六樓</br>
+                Tel&nbsp;&nbsp;+886-2-8772-1881</br>
+                Fax&nbsp;+886-2-8772-1081</br>
+                </br>
+                Mon – Fri / 09:00 – 18:00</br>
+                </br>
+                © 2014 Chitorch interior Design Co., Ltd.</p>
+		    <!-- Floor END-->
+        </div>
+    </div>
+
+	<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="js/supersized.2.0.js"></script>
+	<script type="text/javascript">  
+		$(function(){
+			$.fn.supersized.options = {  
+				startwidth: 1000, //照片長度 
+				startheight: 750, //照片寬度
+				vertical_center: 1, //垂直居中 1居中 0關閉
+				slideshow: 1, //自動輪播 1開 0關
+				navigation:0, //播放控制鈕 1開 0關
+				transition: 1, //0-None, 1-Fade, 2-slide top, 3-slide right, 4-slide bottom, 5-slide left //換場效果
+				pause_hover: 1, //滑入停止輪播
+				slide_counter: 1, //顯示圖片筆數 1開,0關
+				slide_captions: 1, //圖片名稱
+				slide_interval: 3000  //換場時間
+			};
+	        $('#supersize').supersized(); 
+	    });
+	</script>
+
+</body>
+</html>
