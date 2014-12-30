@@ -17,8 +17,5 @@ class Migration_Add_users extends CI_Migration {
               PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
     $this->db->query ($sql);
-
-    $sql = "INSERT INTO `users` (`account`, `password`) VALUES ('admin@chi.torch', '" . md5 ('123456') . "')";
-    $this->db->query ($sql);
   }
 }
