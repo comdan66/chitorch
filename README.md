@@ -5,13 +5,12 @@ The OA's framework, It is based on CodeIgniter version 2.1.4!
 ---
 ## 聲明
 本作品只限分享於研究、研討性質之使用，並不提供任何有營利效益之使用。  
-如有營利用途，務必告知作者 OA(<comdan66@gmail.com>)，並且經由作者同意。
+如有營利用途，務必告知作者 [OA](http://www.ioa.tw/)(<comdan66@gmail.com>)，並且經由作者同意。
 
 <br/>
 
 ## 簡介
-這只是 based on [OA's framework](https://github.com/comdan66/oaci) 的一個案子。  
-就這樣而已！
+這只是 based on [OA's framework](https://github.com/comdan66/oaci) 的一個案子。
 
 <br/>
 
