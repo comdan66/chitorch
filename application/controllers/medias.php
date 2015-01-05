@@ -10,7 +10,7 @@ class Medias extends Site_controller {
   }
 
   public function index ($y = 0) {
-    $limit = 5;
+    $limit = 10;
     if (!$year = Media::find ('all', array ('group' => 'year', 'select' => 'year', 'order' => 'year ASC', 'limit' => '1', 'conditions' => array ('year = ?', $y ? $y : date ('Y')))))
       $year = Media::find ('all', array ('group' => 'year', 'select' => 'year', 'order' => 'year DESC', 'limit' => '1', 'conditions' => array ('year < ?', $y ? $y : date ('Y'))));
     if ($year) {

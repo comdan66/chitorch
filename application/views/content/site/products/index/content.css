@@ -38,3 +38,19 @@
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
+
+/* line 22, content.scss */
+.pagination {
+  text-align: center !important;
+}
+
+/* line 25, content.scss */
+#ALLBCENT #RIGHTC #SMATITLE #padech ul li {
+  float: none !important;
+  display: inline-block !important;
+}
+
+/* line 29, content.scss */
+p.protitle a {
+  word-break: break-all;
+}
