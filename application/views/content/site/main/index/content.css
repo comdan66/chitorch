@@ -2,3 +2,9 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+@media screen and (min-width: 0px) and (max-width: 736px) {
+  /* line 9, content.scss */
+  #ALLB #TOPI #LOGOI a {
+    margin: 0 auto;
+  }
+}

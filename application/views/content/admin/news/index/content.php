@@ -1,16 +1,17 @@
 
-<form action="<?php echo base_url (array ('admin', 'news'));?>" method="post">
-  <section class="grid col-three-quarters mq2-col-full">
-    <h2>最新消息 > 列表</h2>
-    <hr>
-
+<section class="grid col-three-quarters mq2-col-full">
+  <h2>最新消息 > 列表</h2>
+  <hr>
+  <form action="<?php echo base_url (array ('admin', 'news'));?>" method="post">
     <article id="navphilo"> 日&nbsp;&nbsp;&nbsp;&nbsp;期：
       <input type='text' class="date" value='<?php echo $start ? $start : '';?>' name='start' pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" required title="請輸入正確的時間格式 (ex: 1999-01-01)"/> ~ <input type='text' class="date" value='<?php echo $end ? $end : '';?>' name='end' pattern="^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$" required title="請輸入正確的時間格式 (ex: 1999-01-01)"/>
       <button type="submit" id="submit" name="submit">搜尋</button>
       <hr>
     </article>
+  </form>
 
-    <article id="navplace">
+  <article id="navplace">
+    <form action="<?php echo base_url (array ('admin', 'news'));?>" method="post">
       <button type="submit" id="delete">刪除</button>
       &nbsp;
       <button type="button" id="select_all">全選</button>
@@ -48,6 +49,6 @@
         <a href="<?php echo $pagination['next_link'];?>" class="arrow"></a>
         ｜ 筆數共<?php echo $pagination['total'];?>筆
       </p>
-    </article>
-  </section>
-</form>
+    </form>
+  </article>
+</section>
