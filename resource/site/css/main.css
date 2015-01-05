@@ -133,7 +133,7 @@ body{
 	display:block;
 	margin:20px 0 0 0;
 	text-indent:-9999px;
-	background-image:url(../images/index/logo.png);
+	background-image:url(../images/index/logo.png?v=1);
 	background-repeat:no-repeat;
 	width:203px;
 	height:36px;
@@ -1692,7 +1692,7 @@ p.ST {
 			display:block;
 			margin:30px 0 15px 0;
 			text-indent:-9999px;
-			background-image:url(../images/index/logo.png);
+			background-image:url(../images/index/logo.png?v=1);
 			background-repeat:no-repeat;
 			background-position:50% 50%;
 			-webkit-box-sizing:border-box;
