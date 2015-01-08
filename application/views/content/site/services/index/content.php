@@ -1,8 +1,9 @@
 
-<div id="RIGHTC">
+      <!-- 右邊 START -->
+      <div id="RIGHTC">
           <!-- 右邊 大標題 START-->
             <div id="TOPTITLE">
-              <p class="bigtitle">Service</p>
+              <p class="bigtitle">SERVICE</p>
             </div>
             <!-- 右邊 大標題 END -->
             
@@ -64,11 +65,14 @@
                     
                 </div>
         
+                <!-------- 0108 start-------->
                 <div class="SERbox">
-                  <div id="simgbox">
-                    <img src="<?php echo base_url (array ('resource', 'site', 'images', 'service', 'service_image.jpg'));?>" width="100%">
-                    </div>
+                  <div id="depic"></div>
+                  <!--<div id="simgbox">
+                    <img src="images/service/service_image.jpg" width="100%">
+                    </div>-->
                 </div>
+                <!-------- 0108 end-------->
                 
                 <div class="SERbox">
                   <div id="SERDetitle">收費標準</div>
@@ -240,3 +244,6 @@
             </div>
             <!-- 右邊  內容 END -->
       </div>
+      <!-- 右邊 END -->
+        
+        

@@ -17,3 +17,8 @@
   width: auto;
   margin: 5px;
 }
+
+/* line 18, content.scss */
+p.bigtitle {
+  width: 30%;
+}

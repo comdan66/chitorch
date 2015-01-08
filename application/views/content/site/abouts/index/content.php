@@ -3,7 +3,7 @@
     <div id="RIGHTC">
       <div id="TOPIMA">
         <div id="TOPTITLEA">
-          <p class="bigtitle">ABOUT</p>
+          <p class="bigtitle">PROFILE</p>
         </div>
                 
         <div id="bgtypebox">

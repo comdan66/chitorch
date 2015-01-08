@@ -1,6 +1,6 @@
 <div id="RIGHTC">
   <div id="TOPTITLE">
-    <p class="bigtitle">PROJECT</p>
+    <p class="bigtitle">PORTFOLIO</p>
   </div>
 
   <div id="SMATITLE">

@@ -1,7 +1,7 @@
 
 <div id="RIGHTC">
   <div id="TOPTITLE">
-    <p class="bigtitle">MEDIA</p>
+    <p class="bigtitle">PRESS</p>
   </div>
 
   <div id="SMATITLE">

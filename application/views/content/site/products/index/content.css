@@ -54,3 +54,8 @@
 p.protitle a {
   word-break: break-all;
 }
+
+/* line 32, content.scss */
+p.bigtitle {
+  width: 30%;
+}
