@@ -18,7 +18,7 @@
               <img src="<?php echo $product->first_picture ? $product->first_picture->file_name->url ('191x168') : '';?>" width="100%">
             </a>
             <p class="protitle">
-              <a href="#">// <?php echo $product->title;?></a>
+              <a href="<?php echo base_url (array ('products', $product->id));?>">// <?php echo $product->title;?></a>
             </p>
           </div>
   <?php }

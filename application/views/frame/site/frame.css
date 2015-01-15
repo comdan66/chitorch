@@ -44,16 +44,34 @@
   margin-left: 10px;
 }
 
+/* line 31, frame.scss */
+#DOWNC svg {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  font-weight: bold;
+}
+/* line 37, frame.scss */
+#DOWNC svg, #DOWNC svg * {
+  color: #807f7f;
+  fill: #807f7f;
+}
+/* line 43, frame.scss */
+#DOWNC svg:hover, #DOWNC svg:hover * {
+  color: white;
+  fill: white;
+}
+
 @media screen and (min-width: 0px) and (max-width: 736px) {
-  /* line 32, frame.scss */
+  /* line 50, frame.scss */
   #ALLBCENT {
     position: relative;
   }
-  /* line 35, frame.scss */
+  /* line 53, frame.scss */
   #ALLBCENT #LEFTC h5 {
     cursor: pointer;
   }
-  /* line 41, frame.scss */
+  /* line 59, frame.scss */
   #ALLBCENT #slide_cover {
     position: absolute;
     display: inline-block;
@@ -68,7 +86,7 @@
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
   }
-  /* line 53, frame.scss */
+  /* line 71, frame.scss */
   #ALLBCENT #right_slide {
     position: absolute;
     display: inline-block;
@@ -89,25 +107,25 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 67, frame.scss */
+  /* line 85, frame.scss */
   #ALLBCENT #right_slide.close {
     right: -255px;
   }
-  /* line 69, frame.scss */
+  /* line 87, frame.scss */
   #ALLBCENT #right_slide.close ~ #slide_cover {
     left: -100%;
   }
-  /* line 74, frame.scss */
+  /* line 92, frame.scss */
   #ALLBCENT #right_slide.close .units .unit.shimmer {
     -moz-animation: none;
     -webkit-animation: none;
     animation: none;
   }
-  /* line 80, frame.scss */
+  /* line 98, frame.scss */
   #ALLBCENT #right_slide ~ #slide_cover {
     left: 0;
   }
-  /* line 83, frame.scss */
+  /* line 101, frame.scss */
   #ALLBCENT #right_slide .units {
     position: relative;
     display: inline-block;
@@ -120,23 +138,23 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 93, frame.scss */
+  /* line 111, frame.scss */
   #ALLBCENT #right_slide .units .ug {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: none;
   }
-  /* line 96, frame.scss */
+  /* line 114, frame.scss */
   #ALLBCENT #right_slide .units .ug.open {
     display: block;
   }
-  /* line 99, frame.scss */
+  /* line 117, frame.scss */
   #ALLBCENT #right_slide .units .ug .unit {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-  /* line 104, frame.scss */
+  /* line 122, frame.scss */
   #ALLBCENT #right_slide .units .unit {
     position: relative;
     display: inline-block;
@@ -153,16 +171,16 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 118, frame.scss */
+  /* line 136, frame.scss */
   #ALLBCENT #right_slide .units .unit:hover {
     color: white;
     border-bottom: 1px solid white;
   }
-  /* line 122, frame.scss */
+  /* line 140, frame.scss */
   #ALLBCENT #right_slide .units .unit.title {
     padding-left: 10px;
   }
-  /* line 125, frame.scss */
+  /* line 143, frame.scss */
   #ALLBCENT #right_slide .units .unit a {
     display: inline-block;
     width: 100%;

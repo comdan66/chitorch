@@ -17,7 +17,8 @@
         <link href="<?php echo base_url (array ('resource', 'site', 'css', 'main.css'));?>" rel="stylesheet" type="text/css">
     <![endif]-->
   </head>
-  <body class="centbg">
+  <body class="centbg" ONDRAGSTART="window.event.returnValue=false" onSelectStart="event.returnValue=false" ONCONTEXTMENU="window.event.returnValue=false" >
+
 <?php echo isset ($hidden) ? $hidden:'';?>
 <?php echo isset ($content) ? $content : '';?>
   </body>

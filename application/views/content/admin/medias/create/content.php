@@ -32,7 +32,6 @@
               <button type="button" id="add_pic" name="add_pic" class='add_pic'>＋</button>
             </label>
           ( 圖片格式：jpg / gif / png )<br>
-          ( 圖片尺寸：XXX*XXX像素 )<br>
           </td>
         </tr>
         <tr>

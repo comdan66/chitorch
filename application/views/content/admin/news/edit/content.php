@@ -1,7 +1,7 @@
 <form action="<?php echo base_url (array ('admin', 'news', 'edit', $new->id));?>" method="post" enctype="multipart/form-data" >
 
   <section class="grid col-three-quarters mq2-col-full">
-    <h2>最新消息 > 新增</h2>
+    <h2>最新消息 > 修改</h2>
     <hr>
     <h4>＊為必填欄位</h4>
     <input type="hidden" id='get_delete_url' value='<?php echo base_url (array ('admin', 'news', 'delete')); ?>' />
@@ -47,7 +47,6 @@
               <button type="button" id="add_pic" name="add_pic" class='add_pic'>＋</button>
             </label>
             ( 圖片格式：jpg / gif / png )<br>
-            ( 圖片尺寸：XXX*XXX像素 )<br>
             <div class="pic">
               <ul>
           <?php foreach ($new->npics as $npic) { ?>
