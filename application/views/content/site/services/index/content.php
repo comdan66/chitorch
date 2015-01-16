@@ -3,7 +3,7 @@
       <div id="RIGHTC">
           <!-- 右邊 大標題 START-->
             <div id="TOPTITLE">
-              <p class="bigtitle">SERVICE</p>
+              <p class="bigtitle">Service</p>
             </div>
             <!-- 右邊 大標題 END -->
             
@@ -81,7 +81,7 @@
                     </div>
                     
                     <div class="SERCENbox">
-                      <div class="SERCENboxtitle">設計費用：<span class="sercgre">若承接工程，設計費折扣2000元</span>
+                      <div class="SERCENboxtitle">設計費用：<span class="sercgre">若承接工程，設計費另有折扣</span>
                         </div>
                         
                         <div class="cenBOX">
@@ -245,5 +245,3 @@
             <!-- 右邊  內容 END -->
       </div>
       <!-- 右邊 END -->
-        
-        
