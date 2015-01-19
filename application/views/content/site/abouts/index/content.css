@@ -2,3 +2,64 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 7, content.scss */
+*.clearfix {
+  *zoom: 1;
+}
+/* line 10, content.scss */
+*.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+
+/* line 18, content.scss */
+#ALLBCENT #RIGHTC {
+  padding: 0;
+}
+/* line 20, content.scss */
+#ALLBCENT #RIGHTC #TOPIMA {
+  margin: 0;
+  padding: 1px;
+}
+/* line 23, content.scss */
+#ALLBCENT #RIGHTC #TOPIMA .t {
+  margin-top: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/* line 29, content.scss */
+#ALLBCENT #RIGHTC #TOPIMA .t .l, #ALLBCENT #RIGHTC #TOPIMA .t .c {
+  float: left;
+  display: inline-block;
+}
+/* line 33, content.scss */
+#ALLBCENT #RIGHTC #TOPIMA .t .l {
+  height: 1px;
+  background-color: #252c32;
+  margin-top: 7px;
+  width: calc(50% - 50px);
+}
+/* line 39, content.scss */
+#ALLBCENT #RIGHTC #TOPIMA .t .c {
+  text-align: center;
+  font-size: 16px;
+  width: 100px;
+}

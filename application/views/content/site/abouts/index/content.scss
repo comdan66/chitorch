@@ -2,3 +2,46 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+@import "_oa";
+
+*.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}
+#ALLBCENT {
+  #RIGHTC {
+    padding: 0;
+    #TOPIMA {
+      margin: 0;
+      padding: 1px;
+      .t {
+        margin-top: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        $w: 100px;
+        .l, .c {
+          float: left;
+          display: inline-block;
+        }
+        .l {
+          height: 1px;
+          background-color: rgba(37, 44, 50, 1);
+          margin-top: 7px;
+          width: calc(50% - #{$w / 2});
+        }
+        .c {
+          text-align: center;
+          font-size: 16px;
+          width: $w;
+        }
+      }
+    }
+  }  
+}

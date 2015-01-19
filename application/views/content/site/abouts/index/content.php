@@ -2,9 +2,12 @@
   if ($t == 0) { ?>
     <div id="RIGHTC">
       <div id="TOPIMA">
-        <div id="TOPTITLEF">
-          <p class="bigtitle">PROFILE</p>
+        <div class='t clearfix'>
+          <div class='l'></div>
+          <div class='c'>PROFILE</div>
+          <div class='l'></div>
         </div>
+
         <div id="bgtypebox">
             <p class="sercgre">
             我們總是追求…<br/><br/>
