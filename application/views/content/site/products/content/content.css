@@ -21,5 +21,11 @@
 /* line 18, content.scss */
 p.bigtitle {
   width: 44%;
-  width: 40%;
+}
+
+@media screen and (max-width: 736px) {
+  /* line 22, content.scss */
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }
 }

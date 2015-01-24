@@ -18,3 +18,8 @@
 p.bigtitle {
   width: 44%;
 }
+@media screen and (max-width: 736px) {
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }  
+}

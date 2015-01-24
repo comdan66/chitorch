@@ -64,25 +64,46 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 736px) {
-  /* line 49, content.scss */
+  /* line 50, content.scss */
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }
+
+  /* line 54, content.scss */
+  .sercgreat {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* line 58, content.scss */
   .c {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 736px) {
+  /* line 63, content.scss */
+  #ALLBCENT #RIGHTC .ACBOXTT .desbox .TTT .depboxt {
+    width: 103%;
+  }
+}
 @media screen and (min-width: 737px) {
-  /* line 60, content.scss */
+  /* line 69, content.scss */
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }
+  /* line 74, content.scss */
   #ALLBCENT #RIGHTC #TOPIMA .t .l, #ALLBCENT #RIGHTC #TOPIMA .t .c {
     float: left;
     display: inline-block;
   }
-  /* line 64, content.scss */
+  /* line 78, content.scss */
   #ALLBCENT #RIGHTC #TOPIMA .t .l {
     height: 1px;
     background-color: #252c32;
     margin-top: 15px;
     width: calc(50% - 100px);
   }
-  /* line 70, content.scss */
+  /* line 84, content.scss */
   #ALLBCENT #RIGHTC #TOPIMA .t .c {
     text-align: center;
     font-size: 32px;

@@ -59,3 +59,10 @@ p.protitle a {
 p.bigtitle {
   width: 44%;
 }
+
+@media screen and (max-width: 736px) {
+  /* line 36, content.scss */
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }
+}
