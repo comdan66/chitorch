@@ -18,6 +18,13 @@
       @include opacity(1);
     }
   }
+  .protitle {
+    color: rgba(96, 96, 96, 1);
+  }
+  .protag {
+    color: rgba(96, 96, 96, .7);
+    padding-left: 14px;
+  }
 }
 .pagination {
   text-align: center !important;

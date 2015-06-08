@@ -16,10 +16,25 @@
   margin: 5px;
 }
 p.bigtitle {
-  width: 44%;
+  width: 28%;
 }
 @media screen and (max-width: 736px) {
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }  
+}
+.LEFType {
+  display: block;
+  width: 100%;
+  @media screen and (max-width: 736px) {
+    padding-bottom: 5px;
+  }
+}
+.date {
+  color: rgba(39, 40, 34, .6);
+  @media screen and (max-width: 736px) {
+    font-size: 10px;
+    padding-left: 10px;
+
+  }
 }

@@ -38,30 +38,39 @@
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
+/* line 21, content.scss */
+.pres .protitle {
+  color: #606060;
+}
+/* line 24, content.scss */
+.pres .protag {
+  color: rgba(96, 96, 96, 0.7);
+  padding-left: 14px;
+}
 
-/* line 22, content.scss */
+/* line 29, content.scss */
 .pagination {
   text-align: center !important;
 }
 
-/* line 25, content.scss */
+/* line 32, content.scss */
 #ALLBCENT #RIGHTC #SMATITLE #padech ul li {
   float: none !important;
   display: inline-block !important;
 }
 
-/* line 29, content.scss */
+/* line 36, content.scss */
 p.protitle a {
   word-break: break-all;
 }
 
-/* line 32, content.scss */
+/* line 39, content.scss */
 p.bigtitle {
   width: 44%;
 }
 
 @media screen and (max-width: 736px) {
-  /* line 36, content.scss */
+  /* line 43, content.scss */
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }

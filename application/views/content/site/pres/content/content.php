@@ -1,6 +1,6 @@
 <div id="RIGHTC">
   <div id="TOPTITLE">
-    <p class="bigtitle">PORTFOLIO</p>
+    <p class="bigtitle">PRESS</p>
   </div>
   <div id="CENTRB">
     <div id="NDTO">
@@ -49,9 +49,10 @@
     </div>
 
     <div id="prodtype">
-      <p class="prtop"><?php echo $pre->pre_tag ? $pre->pre_tag->name : '未分類';?></p>
+      <p class="prtop"> </p>
       <div class="prodeleft">
         <p class="LEFType"><?php echo $pre->title;?></p>
+        <p class="date"><?php echo $pre->date->format ('Y年m月');?></p>
       </div>
       <div class="proderight">
  <?php  if ($pre->blocks) {

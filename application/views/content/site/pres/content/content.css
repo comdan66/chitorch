@@ -20,12 +20,35 @@
 
 /* line 18, content.scss */
 p.bigtitle {
-  width: 44%;
+  width: 28%;
 }
 
 @media screen and (max-width: 736px) {
   /* line 22, content.scss */
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
+  }
+}
+/* line 26, content.scss */
+.LEFType {
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 736px) {
+  /* line 26, content.scss */
+  .LEFType {
+    padding-bottom: 5px;
+  }
+}
+
+/* line 33, content.scss */
+.date {
+  color: rgba(39, 40, 34, 0.6);
+}
+@media screen and (max-width: 736px) {
+  /* line 33, content.scss */
+  .date {
+    font-size: 10px;
+    padding-left: 10px;
   }
 }
