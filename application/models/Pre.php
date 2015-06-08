@@ -17,7 +17,7 @@ class Pre extends OaModel {
     array ('blocks', 'class_name' => 'PreBl'),
   );
     static $belongs_to = array (
-    array ('tag', 'class_name' => 'PreTag'),
+    array ('pre_tag', 'class_name' => 'PreTag'),
   );
   public function __construct ($attributes = array (), $guard_attributes = TRUE, $instantiating_via_find = FALSE, $new_record = TRUE) {
     parent::__construct ($attributes, $guard_attributes, $instantiating_via_find, $new_record);
