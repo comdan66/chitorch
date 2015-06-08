@@ -23,6 +23,25 @@ $(function () {
       window.location.assign ($(this).data ('url'));
     });
   }
+  var $_is_pres = $('#_is_pres');
+
+  if ($_is_pres.length && $_is_pres.val ()) {
+    $('.menu_pre').click (function () {
+      var $sub_menu = $(this).next ('.sub_menu');
+      if ($sub_menu.length)
+        $sub_menu.is (':visible') ? $sub_menu.hide () : $sub_menu.show ();
+    });
+    $('.menu_pre').click ();
+    $('.menu_pre_tag').click (function () {
+      var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
+      $('.pres').parent ().empty ().append ($select).append ($not_select);
+    });
+  } else {
+    $('.menu_pre').click (function () {
+      window.location.assign ($(this).data ('url'));
+    });
+  }
 
 
   $_class = $('#_class');
@@ -37,6 +56,14 @@ $(function () {
       var $select = $('.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
       var $not_select = $('.products[data-category_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
         $('.products').parent ().empty ().append ($select).append ($not_select);
+      });
+      // var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+    } else if ($_class.val () == 'pres') {
+      $('.ug.prs').show ();
+      $('.ug.prs a').click (function () {
+      var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
+        $('.pres').parent ().empty ().append ($select).append ($not_select);
       });
       // var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
     }

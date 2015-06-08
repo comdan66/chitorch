@@ -21,7 +21,7 @@
       <ul>
         <li><a href="<?php echo base_url (array ('abouts'));?>" data-en='PROFILE' data-tw='公司簡介'>PROFILE</a></li>
         <li><a href="<?php echo base_url (array ('products'));?>" data-en='PORTFOLIO' data-tw='作品欣賞'>PORTFOLIO</a></li>
-        <li><a href="<?php echo base_url (array ('medias'));?>" data-en='PRESS' data-tw='媒體報導'>PRESS</a></li>
+        <li><a href="<?php echo base_url (array ('pres'));?>" data-en='PRESS' data-tw='媒體報導'>PRESS</a></li>
         <li><a href="<?php echo base_url (array ('news'));?>" data-en='NEWS' data-tw='最近消息'>NEWS</a></li>
         <li><a href="<?php echo base_url (array ('services'));?>" data-en='SERVICE' data-tw='關於服務'>SERVICE</a></li>
         <li><a href="<?php echo base_url (array ('contacts'));?>" data-en='CONTACT' data-tw='聯絡我們'>CONTACT</a></li>

@@ -1,0 +1,39 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+ 
+ @import "_oa";
+
+.pres {
+  position: relative;
+  
+  @include opacity(1);
+  @include transition(all 0.2s ease-in-out);
+
+  &.cover {
+    @include opacity(.3);
+
+    &:hover {
+      @include opacity(1);
+    }
+  }
+}
+.pagination {
+  text-align: center !important;
+}
+#ALLBCENT #RIGHTC #SMATITLE #padech ul li {
+  float: none !important;
+  display: inline-block !important;
+}
+p.protitle a {
+  word-break: break-all;
+}
+p.bigtitle {
+  width: 44%;
+}
+@media screen and (max-width: 736px) {
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }  
+}

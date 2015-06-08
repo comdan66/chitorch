@@ -28,7 +28,16 @@
         </div>
 <?php } ?>
     
-    <a href="<?php echo base_url (array ('medias'));?>" class="CMENU">PRESS</a>
+    <a href="<?php echo $pre_tags ? '#' : base_url (array ('pres'));?>" data-url='<?php echo base_url (array ('pres'));?>' class="CMENU<?php echo $pre_tags ? ' menu_pre' : '';?>">PRESS</a>
+<?php if ($pre_tags) {?>
+        <div class="sub_menu">
+          <ul>
+      <?php foreach ($pre_tags as $pre_tag) { ?>
+              <li><a href="#" data-id='<?php echo $pre_tag->id;?>' class='menu_pre_tag'><?php echo $pre_tag->name;?></a></li>
+      <?php } ?>
+          </ul>
+        </div>
+<?php } ?>
     <a href="<?php echo base_url (array ('news'));?>" class="CMENU">NEWS</a>
     <a href="<?php echo base_url (array ('services'));?>" class="CMENU">SERVICE</a>
     <a href="<?php echo base_url (array ('contacts'));?>" class="CMENU">CONTACT</a>
@@ -47,12 +56,21 @@
       <a href='<?php echo base_url (array ('abouts', 2));?>'><div class='unit'>設計師簡介</div></a>
     </div>
     <a href='<?php echo base_url (array ('products'));?>'><div class='unit title'>PORTFOLIO</div></a>
-    <div class='ug ps'>
-<?php foreach ($categories as $category) { ?>
-        <a href="#" data-id='<?php echo $category->id;?>'><div class='unit'><?php echo $category->name;?></div></a>
+<?php if ($categories) {?>
+        <div class='ug ps'>
+    <?php foreach ($categories as $category) { ?>
+            <a href="#" data-id='<?php echo $category->id;?>'><div class='unit'><?php echo $category->name;?></div></a>
+    <?php } ?>
+        </div>
 <?php } ?>
-    </div>
-    <a href='<?php echo base_url (array ('medias'));?>'><div class='unit title'>PRESS</div></a>
+    <a href='<?php echo base_url (array ('pres'));?>'><div class='unit title'>PRESS</div></a>
+<?php if ($pre_tags) {?>
+        <div class='ug prs'>
+    <?php foreach ($pre_tags as $pre_tag) { ?>
+            <a href="#" data-id='<?php echo $pre_tag->id;?>'><div class='unit'><?php echo $pre_tag->name;?></div></a>
+    <?php } ?>
+        </div>
+<?php } ?>
     <a href='<?php echo base_url (array ('news'));?>'><div class='unit title'>NEWS</div></a>
     <a href='<?php echo base_url (array ('services'));?>'><div class='unit title'>SERVICE</div></a>
     <a href='<?php echo base_url (array ('contacts'));?>'><div class='unit title'>CONTACT</div></a>

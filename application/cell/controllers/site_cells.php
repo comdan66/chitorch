@@ -10,7 +10,7 @@ class Site_cells extends Cell_Controller {
   //   return array ('time' => 60 * 60, 'key' => null);
   // }
   public function side_menu () {
-    return $this->load_view (array ('categories' => Category::find ('all')));
+    return $this->load_view (array ('categories' => Category::find ('all'), 'pre_tags' => PreTag::find ('all')));
   }
   public function footer () {
     return $this->load_view ();

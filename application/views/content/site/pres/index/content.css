@@ -1,0 +1,68 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/* line 8, content.scss */
+.pres {
+  position: relative;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* line 14, content.scss */
+.pres.cover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+/* line 17, content.scss */
+.pres.cover:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+/* line 22, content.scss */
+.pagination {
+  text-align: center !important;
+}
+
+/* line 25, content.scss */
+#ALLBCENT #RIGHTC #SMATITLE #padech ul li {
+  float: none !important;
+  display: inline-block !important;
+}
+
+/* line 29, content.scss */
+p.protitle a {
+  word-break: break-all;
+}
+
+/* line 32, content.scss */
+p.bigtitle {
+  width: 44%;
+}
+
+@media screen and (max-width: 736px) {
+  /* line 36, content.scss */
+  #ALLBCENT #RIGHTC {
+    padding: 0 15px 0 15px;
+  }
+}
