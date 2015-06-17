@@ -16,8 +16,9 @@ class PrePicUploader extends OrmImageUploader {
             '' => array (),
             '64x64' => array ('adaptiveResizeQuadrant', 64, 64, 'c'),
             '80x80' => array ('adaptiveResizeQuadrant', 80, 80, 'c'),
-            '191x168' => array ('adaptiveResizeQuadrant', 191, 168, 'c'),
             '855x575' => array ('adaptiveResizeQuadrant', 855, 575, 'c'),
+            '855w' => array ('resize', 855, 855, 'width'),
+            '200x265' => array ('adaptiveResizeQuadrant', 200, 265, 'c'),
           );
   }
 }

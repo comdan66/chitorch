@@ -131,7 +131,6 @@ foreach ($pre->blocks as $index => $block) {
 
       <hr>
         <button type="button" id='add_block1'>加入區塊1</button>
-        <button type="button" id='add_block2'>加入區塊2</button>
         <button type="submit">確定修改</button>
     </article>
   </form>

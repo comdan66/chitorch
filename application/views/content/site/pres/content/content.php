@@ -21,7 +21,7 @@
       <?php if ($pre->pictures) {
               foreach ($pre->pictures as $i => $picture) { ?>
                 <div class="item<?php echo !$i ? ' active' : '';?>">
-                  <img src="<?php echo $picture->file_name->url ('855x575');?>" width="100%">
+                  <img src="<?php echo $picture->file_name->url ('855w');?>" width="100%">
                 </div>
         <?php }
             }?>
@@ -42,7 +42,7 @@
         <div id="SMALL">
     <?php if ($pre->pictures) {
             foreach ($pre->pictures as $i => $picture) { ?>
-              <img src="<?php echo $picture->file_name->url ('64x64');?>" data-url="<?php echo $picture->file_name->url ('855x575');?>" width="100%" />
+              <img src="<?php echo $picture->file_name->url ('64x64');?>" data-url="<?php echo $picture->file_name->url ('855w');?>" width="100%" />
             <?php }
           }?>
         </div>
@@ -60,10 +60,14 @@
             <p class="Rprotitle"><?php echo $block->title;?></p>
       <?php if ($block->specs) {
               foreach ($block->specs as $spec) {
-                if ($spec->title) { ?>
-                  <p class="Rprosmtitle"><?php echo $spec->title;?><span class="Rprosmtype"><?php echo $spec->content;?></span></p>
-          <?php } else { ?>
-                  <p class="Rprosmtitle"><span class="Rprosmtypeall"><?php echo nl2br ($spec->content);?></span></p>
+                if ($spec->title) {
+                  if (strpos ($spec->content, "http://") !== false) { ?>
+                    <p class="Rprosmtitle"><?php echo $spec->title;?><span class="Rprosmtype"><a href='<?php echo $spec->content;?>'><?php echo $spec->content;?></a></span></p><br/>
+            <?php } else { ?>
+                    <p class="Rprosmtitle"><?php echo $spec->title;?><span class="Rprosmtype"><?php echo $spec->content;?></span></p><br/>
+            <?php }
+                } else { ?>
+                  <!-- <p class="Rprosmtitle"><span class="Rprosmtypeall"><?php echo nl2br ($spec->content);?></span></p><br/> -->
         <?php   }
               }
             }

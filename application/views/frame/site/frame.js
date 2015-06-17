@@ -23,6 +23,7 @@ $(function () {
       window.location.assign ($(this).data ('url'));
     });
   }
+
   var $_is_pres = $('#_is_pres');
 
   if ($_is_pres.length && $_is_pres.val ()) {
@@ -35,7 +36,7 @@ $(function () {
     $('.menu_pre_tag').click (function () {
       var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
       var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
-      $('.pres').parent ().empty ().append ($select).append ($not_select);
+      $('.pres').parents ('#probox').empty ().append ($select).append ($not_select);
     });
   } else {
     $('.menu_pre').click (function () {

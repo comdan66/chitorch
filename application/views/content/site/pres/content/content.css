@@ -52,3 +52,20 @@ p.bigtitle {
     padding-left: 10px;
   }
 }
+
+/* line 41, content.scss */
+#ALLBCENT #RIGHTC #CENTRB #prodtype .prodeleft {
+  width: 260px;
+}
+
+/* line 44, content.scss */
+#ALLBCENT #RIGHTC #CENTRB #prodtype .proderight {
+  width: auto;
+  padding-left: 20px;
+}
+
+/* line 49, content.scss */
+.Rprosmtitle {
+  display: inline-block;
+  width: 100%;
+}

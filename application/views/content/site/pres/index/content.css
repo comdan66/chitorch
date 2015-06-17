@@ -69,8 +69,13 @@ p.bigtitle {
   width: 44%;
 }
 
+/* line 42, content.scss */
+#ALLBCENT #RIGHTC #CENTRB #probox .pcasebox img {
+  height: auto;
+}
+
 @media screen and (max-width: 736px) {
-  /* line 43, content.scss */
+  /* line 46, content.scss */
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }
