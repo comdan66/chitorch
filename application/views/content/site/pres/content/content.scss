@@ -50,3 +50,12 @@ p.bigtitle {
   display: inline-block;
   width: 100%;
 }
+.Rprosmtype {
+  a {
+    color: rgba(68, 68, 68, 1);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

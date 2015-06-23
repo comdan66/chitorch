@@ -69,3 +69,13 @@ p.bigtitle {
   display: inline-block;
   width: 100%;
 }
+
+/* line 54, content.scss */
+.Rprosmtype a {
+  color: #444444;
+  text-decoration: none;
+}
+/* line 57, content.scss */
+.Rprosmtype a:hover {
+  text-decoration: underline;
+}
