@@ -57,7 +57,7 @@
       <div class="proderight">
  <?php  if ($pre->blocks) {
           foreach ($pre->blocks as $block) { ?>
-            <p class="Rprotitle"><?php echo $block->title;?></p>
+            <!-- <p class="Rprotitle">title</p> -->
       <?php if ($block->specs) {
               foreach ($block->specs as $spec) {
                 if ($spec->title) {
