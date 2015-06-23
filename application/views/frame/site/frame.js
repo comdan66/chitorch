@@ -34,8 +34,11 @@ $(function () {
     });
     $('.menu_pre').click ();
     $('.menu_pre_tag').click (function () {
-      var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
-      var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
+      var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').parent ().clone ();
+      var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').parent ().clone ();
+      $select.find ('.pres').removeClass ('cover');
+      $not_select.find ('.pres').addClass ('cover');
+
       $('.pres').parents ('#probox').empty ().append ($select).append ($not_select);
     });
   } else {
