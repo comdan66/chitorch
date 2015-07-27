@@ -70,7 +70,7 @@
       <td bgcolor="#F7F7F7" width="110">標題</td>
       <td bgcolor="#F7F7F7" class="textleft" width="391">
         <input type="hidden" name='block[<%=index%>][type]' value='1' />
-        <input type='text' value="" name='block[<%=index%>][title]' placeholder='請輸入標題' title="輸入100個字元以內" >
+        <input type='hidden' value="" name='block[<%=index%>][title]' placeholder='請輸入標題' title="輸入100個字元以內" >
         <button type="button" class='add_spec' data-parent='block_2'>＋ 新增規格</button>
         <div class='delete'>x</div>
       </td>

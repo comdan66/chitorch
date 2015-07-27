@@ -75,7 +75,7 @@ class Pres extends Admin_controller {
       }
     }
 
-    $pre_tags = PreTag::find ('all', array ('order' => 'sort DESC, id DESC'));
+    $pre_tags = PreTag::find ('all', array ('order' => 'sort ASC, id ASC'));
     $this->load_view (array ('pre_tags' => $pre_tags));
   }
   public function edit ($id = 0) {
