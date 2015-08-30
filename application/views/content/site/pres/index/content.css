@@ -41,41 +41,53 @@
 /* line 21, content.scss */
 .pres .protitle {
   color: #606060;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-/* line 24, content.scss */
+/* line 25, content.scss */
 .pres .protag {
   color: rgba(96, 96, 96, 0.7);
   padding-left: 14px;
 }
 
-/* line 29, content.scss */
+/* line 30, content.scss */
 .pagination {
   text-align: center !important;
 }
 
-/* line 32, content.scss */
+/* line 33, content.scss */
 #ALLBCENT #RIGHTC #SMATITLE #padech ul li {
   float: none !important;
   display: inline-block !important;
 }
 
-/* line 36, content.scss */
+/* line 37, content.scss */
 p.protitle a {
   word-break: break-all;
 }
 
-/* line 39, content.scss */
+/* line 40, content.scss */
 p.bigtitle {
   width: 44%;
 }
 
-/* line 42, content.scss */
+/* line 43, content.scss */
+#ALLBCENT #RIGHTC #CENTRB #probox .pcasebox {
+  height: 300px;
+  float: left;
+  padding: 5px 20px;
+  width: 23.5%;
+  height: 290px;
+}
+
+/* line 50, content.scss */
 #ALLBCENT #RIGHTC #CENTRB #probox .pcasebox img {
   height: auto;
 }
 
 @media screen and (max-width: 736px) {
-  /* line 46, content.scss */
+  /* line 54, content.scss */
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }

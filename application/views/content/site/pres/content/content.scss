@@ -26,6 +26,9 @@ p.bigtitle {
 .LEFType {
   display: block;
   width: 100%;
+    float: left;
+    font-size: 1em;
+    color: #444444;
   @media screen and (max-width: 736px) {
     padding-bottom: 5px;
   }

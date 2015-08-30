@@ -33,6 +33,9 @@ p.bigtitle {
 .LEFType {
   display: block;
   width: 100%;
+  float: left;
+  font-size: 1em;
+  color: #444444;
 }
 @media screen and (max-width: 736px) {
   /* line 26, content.scss */
@@ -41,41 +44,41 @@ p.bigtitle {
   }
 }
 
-/* line 33, content.scss */
+/* line 36, content.scss */
 .date {
   color: rgba(39, 40, 34, 0.6);
 }
 @media screen and (max-width: 736px) {
-  /* line 33, content.scss */
+  /* line 36, content.scss */
   .date {
     font-size: 10px;
     padding-left: 10px;
   }
 }
 
-/* line 41, content.scss */
+/* line 44, content.scss */
 #ALLBCENT #RIGHTC #CENTRB #prodtype .prodeleft {
   width: 260px;
 }
 
-/* line 44, content.scss */
+/* line 47, content.scss */
 #ALLBCENT #RIGHTC #CENTRB #prodtype .proderight {
   width: auto;
   padding-left: 20px;
 }
 
-/* line 49, content.scss */
+/* line 52, content.scss */
 .Rprosmtitle {
   display: inline-block;
   width: 100%;
 }
 
-/* line 54, content.scss */
+/* line 57, content.scss */
 .Rprosmtype a {
   color: #444444;
   text-decoration: none;
 }
-/* line 57, content.scss */
+/* line 60, content.scss */
 .Rprosmtype a:hover {
   text-decoration: underline;
 }
