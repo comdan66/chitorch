@@ -56,20 +56,20 @@ $(function () {
 
     } else if ($_class.val () == 'products') {
       $('.ug.ps').show ();
-      $('.ug.ps a').click (function () {
-      var $select = $('.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
-      var $not_select = $('.products[data-category_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
-        $('.products').parent ().empty ().append ($select).append ($not_select);
-      });
-      var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      // $('.ug.ps a').click (function () {
+      // var $select = $('.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      // var $not_select = $('.products[data-category_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
+      //   $('.products').parent ().empty ().append ($select).append ($not_select);
+      // });
+      // var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
     } else if ($_class.val () == 'pres') {
       $('.ug.prs').show ();
-      $('.ug.prs a').click (function () {
-      var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
-      var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
-        $('.pres').parent ().empty ().append ($select).append ($not_select);
-      });
-      var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      // $('.ug.prs a').click (function () {
+      // var $select = $('.pres[data-pre_tag_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
+      // var $not_select = $('.pres[data-pre_tag_id!="' + $(this).data ('id') + '"]').clone ().addClass ('cover');
+      //   $('.pres').parent ().empty ().append ($select).append ($not_select);
+      // });
+      // var $select = $('.ug.products[data-category_id="' + $(this).data ('id') + '"]').clone ().removeClass ('cover');
     }
   }
   var $rightSlide = $('#right_slide');

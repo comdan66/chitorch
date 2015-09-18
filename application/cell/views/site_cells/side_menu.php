@@ -59,7 +59,7 @@
 <?php if ($categories) {?>
         <div class='ug ps'>
     <?php foreach ($categories as $category) { ?>
-            <a href="#" data-id='<?php echo $category->id;?>'><div class='unit'><?php echo $category->name;?></div></a>
+            <a href="<?php echo base_url (array ('products', 0, $category->id));?>" data-id='<?php echo $category->id;?>'><div class='unit'><?php echo $category->name;?></div></a>
     <?php } ?>
         </div>
 <?php } ?>
@@ -67,7 +67,7 @@
 <?php if ($pre_tags) {?>
         <div class='ug prs'>
     <?php foreach ($pre_tags as $pre_tag) { ?>
-            <a href="#" data-id='<?php echo $pre_tag->id;?>'><div class='unit'><?php echo $pre_tag->name;?></div></a>
+            <a href="<?php echo base_url (array ('pres', 0, $pre_tag->id));?>" data-id='<?php echo $pre_tag->id;?>'><div class='unit'><?php echo $pre_tag->name;?></div></a>
     <?php } ?>
         </div>
 <?php } ?>
