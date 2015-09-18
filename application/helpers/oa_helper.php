@@ -4,6 +4,30 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+if (!function_exists ('add_conditions'))
+{
+    function add_conditions (&$conditions, $str)
+    {
+        $args = array_filter (func_get_args (), function ($t) {
+            return $t !== null;
+        });
+        $args = array_splice($args, !isset ($conditions) ? 1 : 2, 3);
+
+        if (!isset($conditions) || !array_filter($conditions))
+            $conditions = array();
+
+        if (!$conditions)
+            $conditions[0] = '(' . $str . ')';
+        else
+            $conditions[0] .= ' AND (' . $str . ')';
+
+        foreach ($args as $arg)
+            if ($arg !== null)
+                array_push($conditions, $arg);
+
+        return $conditions;
+    }
+}
 if (!function_exists ('utilitySameLevelPath')) {
   function utilitySameLevelPath ($path) {
     return ($paths = implode ('/', array_filter (func_get_args ()))) ? preg_replace ("/(https?:\/)\/?/", "$1/", preg_replace ('/\/(\.?\/)+/', '/', $paths)) : '';

@@ -17,23 +17,23 @@
         <li><a href="<?php echo base_url (array ('abouts', 2));?>" class='menu_category'>設計師簡介</a></li>
       </ul>
     </div>
-    <a href="<?php echo $categories ? '#' : base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">PORTFOLIO</a>
+    <a href="<?php echo base_url (array ('products'));?>" data-url='<?php echo base_url (array ('products'));?>' class="CMENU<?php echo $categories ? ' menu_project' : '';?>">PORTFOLIO</a>
 <?php if ($categories) {?>
         <div class="sub_menu">
           <ul>
       <?php foreach ($categories as $category) { ?>
-              <li><a href="#" data-id='<?php echo $category->id;?>' class='menu_category'><?php echo $category->name;?></a></li>
+              <li><a href="<?php echo base_url (array ('products', 0, $category->id));?>" data-id='<?php echo $category->id;?>' class='menu_category'><?php echo $category->name;?></a></li>
       <?php } ?>
           </ul>
         </div>
 <?php } ?>
     
-    <a href="<?php echo $pre_tags ? '#' : base_url (array ('pres'));?>" data-url='<?php echo base_url (array ('pres'));?>' class="CMENU<?php echo $pre_tags ? ' menu_pre' : '';?>">PRESS</a>
+    <a href="<?php echo base_url (array ('pres'));?>" data-url='<?php echo base_url (array ('pres'));?>' class="CMENU<?php echo $pre_tags ? ' menu_pre' : '';?>">PRESS</a>
 <?php if ($pre_tags) {?>
         <div class="sub_menu">
           <ul>
       <?php foreach ($pre_tags as $pre_tag) { ?>
-              <li><a href="#" data-id='<?php echo $pre_tag->id;?>' class='menu_pre_tag'><?php echo $pre_tag->name;?></a></li>
+              <li><a href="<?php echo base_url (array ('pres', 0, $pre_tag->id));?>" data-id='<?php echo $pre_tag->id;?>' class='menu_pre_tag'><?php echo $pre_tag->name;?></a></li>
       <?php } ?>
           </ul>
         </div>

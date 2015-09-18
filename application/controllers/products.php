@@ -18,49 +18,45 @@ class Products extends Site_controller {
           ->load_view (array ('product' => $product));
   }
 
-  public function index ($offset = 0) {
+  public function a () {
+    // $products = Product::find ('all', array ('offset' => $offset, 'limit' => $limit, 'order' => 'id DESC', 'conditions' => array ('is_enabled = ?', 1)));
+    Product::create (array (
+        'title' => 'a',
+        'is_enabled' => 1,
+        'date' => date('Y-m-d'),
+        'category_id' => 1
+      ));
+  }
+  public function index ($offset = 0, $category_id = 0) {
     $limit = 16;
     $total = Product::count (array ('conditions' => array ('is_enabled = ?', 1)));
-    $offset = ($offset < $total) || ($offset >= 0) ? $offset : 0;
-    $products = Product::find ('all', array ('offset' => $offset, 'limit' => $limit, 'order' => 'id DESC', 'conditions' => array ('is_enabled = ?', 1)));
-
-    $this->load->library ('pagination');
+    $products = $category_id ? Product::find ('all', array (
+              'order' => 'case when category_id = ' . $category_id . ' then 1 else 2 end, id DESC', 
+              'offset' => $offset, 
+              'limit' => $limit, 
+              'conditions' => array ('is_enabled = ?', 1)
+            )) : Product::find ('all', array (
+              'offset' => $offset, 
+              'limit' => $limit, 
+              'order' => 'id DESC', 
+              'conditions' => array ('is_enabled = ?', 1)
+            )); 
     
-    $a = $total / $limit;
-    $s = $offset / $limit;
-    $pagination_config = array (
-      'total_rows' => $total,
-      'page_query_string' => true,
-      'query_string_segment' => 'per_page',
-      'num_links' => 2 + ((3 - $s) > 0 ? 3 - $s - 1 : ($s - ($a - 3) > 0 ? $s - ($a - 3): 0)),
-      'per_page' => $limit,
-      'base_url' => base_url (array ($this->get_class (), $this->get_method ())),
-      'first_link' => '',
-      'last_link' => '', 
-      'prev_link' => '上一頁', 
-      'next_link' => '下一頁',
-      'uri_segment' => $offset ? 3 : 0, 
-      'page_query_string' => false, 
-      'full_tag_open' => '<ul class="pagination">', 
-      'full_tag_close' => '</ul>',
-      'first_tag_open' => '', 
-      'first_tag_close' => '', 
-      'prev_tag_open' => '<li class="UP">', 
-      'prev_tag_close' => '</li>', 
-      'num_tag_open' => '<li class="USE">', 
-      'num_tag_close' => '</li>',
-      'cur_tag_open' => '<li class="NOUSE">', 
-      'cur_tag_close' => '</li>',
-      'next_tag_open' => '<li class="NEXT">', 
-      'next_tag_close' => '</li>', 
-      'last_tag_open' => '', 
-      'last_tag_close' => '',
+    $this->load->library ('pagination');
+    $configs = array ('products', '%s', $category_id);
+    $configs = array (
+        'uri_segment' => 2,
+        'base_url' => base_url ($configs)
       );
-    $this->pagination->initialize ($pagination_config);
-    $pagination = $this->pagination->create_links ();
+    $offset = $offset < $total ? $offset : 0;
+    $pagination = $this->pagination->initialize (array_merge (
+      array ('total_rows' => $total, 'num_links' => 5, 'per_page' => $limit, 'uri_segment' => 0, 'base_url' => '', 'page_query_string' => false, 'first_link' => '第一頁', 'last_link' => '最後頁', 'prev_link' => '上一頁', 'next_link' => '下一頁', 'full_tag_open' => '<ul class="pagination">', 'full_tag_close' => '</ul>', 'first_tag_open' => '<li>', 'first_tag_close' => '</li>', 'prev_tag_open' => '<li class="UP">', 'prev_tag_close' => '</li>', 'num_tag_open' => '<li class="USE">', 'num_tag_close' => '</li>', 'cur_tag_open' => '<li class="NOUSE"><a href="#">', 'cur_tag_close' => '</a></li>', 'next_tag_open' => '<li class="NEXT">', 'next_tag_close' => '</li>', 'last_tag_open' => '<li>', 'last_tag_close' => '</li>'), $configs))->create_links ();
 
     $this->add_hidden (array ('id' => '_is_projects', 'value' => true))
          ->add_hidden (array ('id' => '_class', 'value' => 'products'))
-         ->load_view (array ('products' => $products, 'pagination' => $pagination));
+         ->load_view (array (
+            'products' => $products, 
+            'category_id' => $category_id, 
+            'pagination' => $pagination));
   }
 }

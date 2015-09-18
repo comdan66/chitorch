@@ -41,8 +41,14 @@ $route['admin/edit'] = "admin/main/edit";
 $route['admin/login'] = "admin/main/login";
 $route['admin/logout'] = "admin/main/logout";
 
-$route['products/(:num)'] = "products/content/$1";
-$route['pres/(:num)'] = "pres/content/$1";
+$route['product/(:num)'] = "products/content/$1";
+$route['products/(:num)'] = "products/index/$1";
+$route['products/(:num)/(:num)'] = "products/index/$1/$2";
+
+$route['pre/(:num)'] = "pres/content/$1";
+$route['pres/(:num)'] = "pres/index/$1";
+$route['pres/(:num)/(:num)'] = "pres/index/$1/$2";
+
 $route['medias/(:num)'] = "medias/index/$1";
 $route['news/(:num)'] = "news/content/$1";
 $route['abouts/(:num)'] = "abouts/index/$1";
