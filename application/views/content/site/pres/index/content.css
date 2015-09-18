@@ -75,10 +75,6 @@ p.bigtitle {
 /* line 43, content.scss */
 #ALLBCENT #RIGHTC #CENTRB #probox .pcasebox {
   height: 300px;
-  float: left;
-  padding: 5px 20px;
-  width: 23.5%;
-  height: 290px;
 }
 
 /* line 50, content.scss */
@@ -88,6 +84,18 @@ p.bigtitle {
 
 @media screen and (max-width: 736px) {
   /* line 54, content.scss */
+  .pres .protitle {
+    font-size: 13.6px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* line 59, content.scss */
+  .pres .protag {
+    font-size: 12.6px;
+  }
+
+  /* line 62, content.scss */
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }

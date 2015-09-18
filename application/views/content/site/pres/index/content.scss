@@ -42,15 +42,23 @@ p.bigtitle {
 }
 #ALLBCENT #RIGHTC #CENTRB #probox .pcasebox {
   height: 300px;
-    float: left;
-    padding:5px 20px;
-    width: 23.5%;
-    height: 290px;
+    // float: left;
+    // padding:5px 20px;
+    // width: 23.5%;
+    // height: 290px;
 }
 #ALLBCENT #RIGHTC #CENTRB #probox .pcasebox img {
   height: auto;
 }
 @media screen and (max-width: 736px) {
+.pres .protitle {
+  font-size: 13.6px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.pres .protag {
+  font-size: 12.6px;
+}
   #ALLBCENT #RIGHTC {
     padding: 0 15px 0 15px;
   }  
