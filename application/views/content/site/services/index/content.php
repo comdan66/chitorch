@@ -93,7 +93,7 @@
                                 <p class="smallboxtype">預售屋【客變】</p>
                                 <ul>
                                     <li class="FFF">10坪以下：依5萬元計</li>
-                                    <li class="FFF">10坪以上：依5000/坪計</li>
+                                    <li class="FFF">10坪以上：依6000/坪計</li>
                                 </ul>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 <p class="smallboxtype">新成屋</p>
                                 <ul>
                                     <li class="FFF">10坪以下：依5萬元計</li>
-                                    <li class="FFF">10坪以上：依5000/坪計</li>
+                                    <li class="FFF">10坪以上：依6000/坪計</li>
                                 </ul>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                                 <p class="smallboxtype">中古屋【舊屋翻新】</p>
                                 <ul>
                                     <li class="FFF">10坪以下：依5萬元計</li>
-                                    <li class="FFF">10坪以上：依5000/坪計</li>
+                                    <li class="FFF">10坪以上：依6000/坪計</li>
                                 </ul>
                             </div>
                         </div>
